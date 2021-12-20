@@ -1,0 +1,1729 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "beginningOfMessage": {
+      "description": " A segment to indicate the type and function of the message and to transmit the identifying number.",
+      "properties": {
+        "documentMessageIdentification": {
+          "description": "Identification of a document/message by its number and eventually its version or revision. ",
+          "properties": {
+            "documentIdentifier": {
+              "description": "To identify a document.",
+              "maxLength": 35,
+              "propertyName": "documentIdentifier",
+              "title": "Document identifier",
+              "type": "string"
+            },
+            "revisionIdentifier": {
+              "description": "To identify a revision.",
+              "maxLength": 6,
+              "propertyName": "revisionIdentifier",
+              "title": "Revision identifier",
+              "type": "string"
+            },
+            "versionIdentifier": {
+              "description": "To identify a version.",
+              "maxLength": 9,
+              "propertyName": "versionIdentifier",
+              "title": "Version identifier",
+              "type": "string"
+            }
+          },
+          "propertyName": "documentMessageIdentification",
+          "required": [],
+          "title": "DOCUMENT/MESSAGE IDENTIFICATION",
+          "type": "object"
+        },
+        "documentMessageName": {
+          "description": "Identification of a type of document/message by code or name. Code preferred. ",
+          "properties": {
+            "codeListIdentificationCode": {
+              "description": "Code identifying a user or association maintained code list.",
+              "maxLength": 17,
+              "propertyName": "codeListIdentificationCode",
+              "title": "Code list identification code",
+              "type": "string"
+            },
+            "codeListResponsibleAgencyCode": {
+              "description": "Code specifying the agency responsible for a code list.",
+              "maxLength": 3,
+              "propertyName": "codeListResponsibleAgencyCode",
+              "title": "Code list responsible agency code",
+              "type": "string"
+            },
+            "documentName": {
+              "description": "Name of a document.",
+              "maxLength": 35,
+              "propertyName": "documentName",
+              "title": "Document name",
+              "type": "string"
+            },
+            "documentNameCode": {
+              "description": "Code specifying the document name.",
+              "maxLength": 3,
+              "propertyName": "documentNameCode",
+              "title": "Document name code",
+              "type": "string"
+            }
+          },
+          "propertyName": "documentMessageName",
+          "required": [],
+          "title": "DOCUMENT/MESSAGE NAME",
+          "type": "object"
+        },
+        "messageFunctionCode": {
+          "description": "Code indicating the function of the message.",
+          "maxLength": 3,
+          "propertyName": "messageFunctionCode",
+          "title": "MESSAGE FUNCTION CODE",
+          "type": "string"
+        },
+        "responseTypeCode": {
+          "description": "Code specifying the type of acknowledgment required or transmitted.",
+          "maxLength": 3,
+          "propertyName": "responseTypeCode",
+          "title": "RESPONSE TYPE CODE",
+          "type": "string"
+        }
+      },
+      "propertyName": "beginningOfMessage",
+      "required": [],
+      "title": "BEGINNING OF MESSAGE",
+      "type": "object"
+    },
+    "controlTotalItems": {
+      "description": "Items:  A segment to provide message control totals.",
+      "items": {
+        "properties": {
+          "control": {
+            "description": "Control total for checking integrity of a message or part of a message. ",
+            "properties": {
+              "controlTotalQuantity": {
+                "description": "To specify the value of a control quantity.",
+                "max": 1000000000000000000,
+                "propertyName": "controlTotalQuantity",
+                "title": "Control total quantity",
+                "type": "number"
+              },
+              "controlTotalTypeCodeQualifier": {
+                "description": "Code qualifying the type of control of hash total.",
+                "maxLength": 3,
+                "propertyName": "controlTotalTypeCodeQualifier",
+                "title": "Control total type code qualifier",
+                "type": "string"
+              },
+              "measurementUnitCode": {
+                "description": "Code specifying the unit of measurement.",
+                "maxLength": 8,
+                "propertyName": "measurementUnitCode",
+                "title": "Measurement unit code",
+                "type": "string"
+              }
+            },
+            "propertyName": "control",
+            "required": [
+              "controlTotalTypeCodeQualifier",
+              "controlTotalQuantity"
+            ],
+            "title": "CONTROL",
+            "type": "object"
+          }
+        },
+        "required": [],
+        "type": "object"
+      },
+      "maxItems": 9,
+      "minItems": 0,
+      "propertyName": "controlTotalItems",
+      "title": "CONTROL TOTAL items",
+      "type": "array"
+    },
+    "dateTimePeriodItems": {
+      "description": "Items:  A segment to specify related date/time.",
+      "items": {
+        "properties": {
+          "dateTimePeriod": {
+            "description": "Date and/or time, or period relevant to the specified date/time/period type. ",
+            "properties": {
+              "dateOrTimeOrPeriodFormatCode": {
+                "description": "Code specifying the representation of a date, time or period.",
+                "maxLength": 3,
+                "propertyName": "dateOrTimeOrPeriodFormatCode",
+                "title": "Date or time or period format code",
+                "type": "string"
+              },
+              "dateOrTimeOrPeriodFunctionCodeQualifier": {
+                "description": "Code qualifying the function of a date, time or period.",
+                "maxLength": 3,
+                "propertyName": "dateOrTimeOrPeriodFunctionCodeQualifier",
+                "title": "Date or time or period function code qualifier",
+                "type": "string"
+              },
+              "dateOrTimeOrPeriodText": {
+                "description": "The value of a date, a date and time, a time or of a period in a specified representation.",
+                "maxLength": 35,
+                "propertyName": "dateOrTimeOrPeriodText",
+                "title": "Date or time or period text",
+                "type": "string"
+              }
+            },
+            "propertyName": "dateTimePeriod",
+            "required": [
+              "dateOrTimeOrPeriodFunctionCodeQualifier"
+            ],
+            "title": "DATE/TIME/PERIOD",
+            "type": "object"
+          }
+        },
+        "required": [],
+        "type": "object"
+      },
+      "maxItems": 9,
+      "minItems": 0,
+      "propertyName": "dateTimePeriodItems",
+      "title": "DATE/TIME/PERIOD items",
+      "type": "array"
+    },
+    "freeTextItems": {
+      "description": "Items:  A segment to specify free form or processable supplementary information related to the whole message. In computer-to- computer exchanges free form text will normally require the receiver to process this segment manually.",
+      "items": {
+        "properties": {
+          "freeTextFormatCode": {
+            "description": "Code specifying the format of free text.",
+            "maxLength": 3,
+            "propertyName": "freeTextFormatCode",
+            "title": "FREE TEXT FORMAT CODE",
+            "type": "string"
+          },
+          "freeTextFunctionCode": {
+            "description": "Code specifying the function of free text.",
+            "maxLength": 3,
+            "propertyName": "freeTextFunctionCode",
+            "title": "FREE TEXT FUNCTION CODE",
+            "type": "string"
+          },
+          "languageNameCode": {
+            "description": "Code specifying the language name.",
+            "maxLength": 3,
+            "propertyName": "languageNameCode",
+            "title": "LANGUAGE NAME CODE",
+            "type": "string"
+          },
+          "textLiteral": {
+            "description": "Free text; one to five lines. ",
+            "properties": {
+              "freeText_1": {
+                "description": "Free form text.",
+                "maxLength": 512,
+                "propertyName": "freeText_1",
+                "title": "Free text",
+                "type": "string"
+              },
+              "freeText_2": {
+                "description": "Free form text.",
+                "maxLength": 512,
+                "propertyName": "freeText_2",
+                "title": "Free text",
+                "type": "string"
+              },
+              "freeText_3": {
+                "description": "Free form text.",
+                "maxLength": 512,
+                "propertyName": "freeText_3",
+                "title": "Free text",
+                "type": "string"
+              },
+              "freeText_4": {
+                "description": "Free form text.",
+                "maxLength": 512,
+                "propertyName": "freeText_4",
+                "title": "Free text",
+                "type": "string"
+              },
+              "freeText_5": {
+                "description": "Free form text.",
+                "maxLength": 512,
+                "propertyName": "freeText_5",
+                "title": "Free text",
+                "type": "string"
+              }
+            },
+            "propertyName": "textLiteral",
+            "required": [
+              "freeText_1"
+            ],
+            "title": "TEXT LITERAL",
+            "type": "object"
+          },
+          "textReference": {
+            "description": "Coded reference to a standard text and its source. ",
+            "properties": {
+              "codeListIdentificationCode": {
+                "description": "Code identifying a user or association maintained code list.",
+                "maxLength": 17,
+                "propertyName": "codeListIdentificationCode",
+                "title": "Code list identification code",
+                "type": "string"
+              },
+              "codeListResponsibleAgencyCode": {
+                "description": "Code specifying the agency responsible for a code list.",
+                "maxLength": 3,
+                "propertyName": "codeListResponsibleAgencyCode",
+                "title": "Code list responsible agency code",
+                "type": "string"
+              },
+              "freeTextDescriptionCode": {
+                "description": "Code specifying free form text.",
+                "maxLength": 17,
+                "propertyName": "freeTextDescriptionCode",
+                "title": "Free text description code",
+                "type": "string"
+              }
+            },
+            "propertyName": "textReference",
+            "required": [
+              "freeTextDescriptionCode"
+            ],
+            "title": "TEXT REFERENCE",
+            "type": "object"
+          },
+          "textSubjectCodeQualifier": {
+            "description": "Code qualifying the subject of the text.",
+            "maxLength": 3,
+            "propertyName": "textSubjectCodeQualifier",
+            "title": "TEXT SUBJECT CODE QUALIFIER",
+            "type": "string"
+          }
+        },
+        "required": [
+          "textSubjectCodeQualifier"
+        ],
+        "type": "object"
+      },
+      "maxItems": 9,
+      "minItems": 0,
+      "propertyName": "freeTextItems",
+      "title": "FREE TEXT items",
+      "type": "array"
+    },
+    "grp1": {
+      "description": "GRP1 -  A segment group to provide information on the document being acknowledged.",
+      "items": {
+        "properties": {
+          "dateTimePeriodItems": {
+            "description": "Items:  A segment to provide the relevant dates concerning the document being acknowledged.",
+            "items": {
+              "properties": {
+                "dateTimePeriod": {
+                  "description": "Date and/or time, or period relevant to the specified date/time/period type. ",
+                  "properties": {
+                    "dateOrTimeOrPeriodFormatCode": {
+                      "description": "Code specifying the representation of a date, time or period.",
+                      "maxLength": 3,
+                      "propertyName": "dateOrTimeOrPeriodFormatCode",
+                      "title": "Date or time or period format code",
+                      "type": "string"
+                    },
+                    "dateOrTimeOrPeriodFunctionCodeQualifier": {
+                      "description": "Code qualifying the function of a date, time or period.",
+                      "maxLength": 3,
+                      "propertyName": "dateOrTimeOrPeriodFunctionCodeQualifier",
+                      "title": "Date or time or period function code qualifier",
+                      "type": "string"
+                    },
+                    "dateOrTimeOrPeriodText": {
+                      "description": "The value of a date, a date and time, a time or of a period in a specified representation.",
+                      "maxLength": 35,
+                      "propertyName": "dateOrTimeOrPeriodText",
+                      "title": "Date or time or period text",
+                      "type": "string"
+                    }
+                  },
+                  "propertyName": "dateTimePeriod",
+                  "required": [
+                    "dateOrTimeOrPeriodFunctionCodeQualifier"
+                  ],
+                  "title": "DATE/TIME/PERIOD",
+                  "type": "object"
+                }
+              },
+              "required": [],
+              "type": "object"
+            },
+            "maxItems": 99,
+            "minItems": 0,
+            "propertyName": "dateTimePeriodItems",
+            "title": "DATE/TIME/PERIOD items",
+            "type": "array"
+          },
+          "documentMessageDetails": {
+            "description": " A segment to provide the necessary identification information about the document being acknowledged.",
+            "properties": {
+              "communicationMediumTypeCode": {
+                "description": "Code specifying the type of communication medium.",
+                "maxLength": 3,
+                "propertyName": "communicationMediumTypeCode",
+                "title": "COMMUNICATION MEDIUM TYPE CODE",
+                "type": "string"
+              },
+              "documentCopiesRequiredQuantity": {
+                "description": "Quantity of document copies required.",
+                "max": 99,
+                "propertyName": "documentCopiesRequiredQuantity",
+                "title": "DOCUMENT COPIES REQUIRED QUANTITY",
+                "type": "number"
+              },
+              "documentMessageDetails": {
+                "description": "Identification of document/message by number, status, source and/or language. ",
+                "properties": {
+                  "documentIdentifier": {
+                    "description": "To identify a document.",
+                    "maxLength": 35,
+                    "propertyName": "documentIdentifier",
+                    "title": "Document identifier",
+                    "type": "string"
+                  },
+                  "documentSourceDescription": {
+                    "description": "Free form description of the source of a document.",
+                    "maxLength": 70,
+                    "propertyName": "documentSourceDescription",
+                    "title": "Document source description",
+                    "type": "string"
+                  },
+                  "documentStatusCode": {
+                    "description": "Code specifying the status of a document.",
+                    "maxLength": 3,
+                    "propertyName": "documentStatusCode",
+                    "title": "Document status code",
+                    "type": "string"
+                  },
+                  "languageNameCode": {
+                    "description": "Code specifying the language name.",
+                    "maxLength": 3,
+                    "propertyName": "languageNameCode",
+                    "title": "Language name code",
+                    "type": "string"
+                  },
+                  "revisionIdentifier": {
+                    "description": "To identify a revision.",
+                    "maxLength": 6,
+                    "propertyName": "revisionIdentifier",
+                    "title": "Revision identifier",
+                    "type": "string"
+                  },
+                  "versionIdentifier": {
+                    "description": "To identify a version.",
+                    "maxLength": 9,
+                    "propertyName": "versionIdentifier",
+                    "title": "Version identifier",
+                    "type": "string"
+                  }
+                },
+                "propertyName": "documentMessageDetails",
+                "required": [],
+                "title": "DOCUMENT/MESSAGE DETAILS",
+                "type": "object"
+              },
+              "documentMessageName": {
+                "description": "Identification of a type of document/message by code or name. Code preferred. ",
+                "properties": {
+                  "codeListIdentificationCode": {
+                    "description": "Code identifying a user or association maintained code list.",
+                    "maxLength": 17,
+                    "propertyName": "codeListIdentificationCode",
+                    "title": "Code list identification code",
+                    "type": "string"
+                  },
+                  "codeListResponsibleAgencyCode": {
+                    "description": "Code specifying the agency responsible for a code list.",
+                    "maxLength": 3,
+                    "propertyName": "codeListResponsibleAgencyCode",
+                    "title": "Code list responsible agency code",
+                    "type": "string"
+                  },
+                  "documentName": {
+                    "description": "Name of a document.",
+                    "maxLength": 35,
+                    "propertyName": "documentName",
+                    "title": "Document name",
+                    "type": "string"
+                  },
+                  "documentNameCode": {
+                    "description": "Code specifying the document name.",
+                    "maxLength": 3,
+                    "propertyName": "documentNameCode",
+                    "title": "Document name code",
+                    "type": "string"
+                  }
+                },
+                "propertyName": "documentMessageName",
+                "required": [],
+                "title": "DOCUMENT/MESSAGE NAME",
+                "type": "object"
+              },
+              "documentOriginalsRequiredQuantity": {
+                "description": "Quantity of document originals required.",
+                "max": 99,
+                "propertyName": "documentOriginalsRequiredQuantity",
+                "title": "DOCUMENT ORIGINALS REQUIRED QUANTITY",
+                "type": "number"
+              }
+            },
+            "propertyName": "documentMessageDetails",
+            "required": [],
+            "title": "DOCUMENT/MESSAGE DETAILS",
+            "type": "object"
+          }
+        },
+        "required": [],
+        "type": "object"
+      },
+      "maxItems": 99,
+      "minItems": 0,
+      "propertyName": "grp1",
+      "title": "GRP1",
+      "type": "array"
+    },
+    "grp2": {
+      "description": "GRP2 -  A group of segments to specify the document/message to which the current message relates, and related date and time.",
+      "items": {
+        "properties": {
+          "dateTimePeriodItems": {
+            "description": "Items:  A segment to specify the date and time of the referenced document/message.",
+            "items": {
+              "properties": {
+                "dateTimePeriod": {
+                  "description": "Date and/or time, or period relevant to the specified date/time/period type. ",
+                  "properties": {
+                    "dateOrTimeOrPeriodFormatCode": {
+                      "description": "Code specifying the representation of a date, time or period.",
+                      "maxLength": 3,
+                      "propertyName": "dateOrTimeOrPeriodFormatCode",
+                      "title": "Date or time or period format code",
+                      "type": "string"
+                    },
+                    "dateOrTimeOrPeriodFunctionCodeQualifier": {
+                      "description": "Code qualifying the function of a date, time or period.",
+                      "maxLength": 3,
+                      "propertyName": "dateOrTimeOrPeriodFunctionCodeQualifier",
+                      "title": "Date or time or period function code qualifier",
+                      "type": "string"
+                    },
+                    "dateOrTimeOrPeriodText": {
+                      "description": "The value of a date, a date and time, a time or of a period in a specified representation.",
+                      "maxLength": 35,
+                      "propertyName": "dateOrTimeOrPeriodText",
+                      "title": "Date or time or period text",
+                      "type": "string"
+                    }
+                  },
+                  "propertyName": "dateTimePeriod",
+                  "required": [
+                    "dateOrTimeOrPeriodFunctionCodeQualifier"
+                  ],
+                  "title": "DATE/TIME/PERIOD",
+                  "type": "object"
+                }
+              },
+              "required": [],
+              "type": "object"
+            },
+            "maxItems": 9,
+            "minItems": 0,
+            "propertyName": "dateTimePeriodItems",
+            "title": "DATE/TIME/PERIOD items",
+            "type": "array"
+          },
+          "reference": {
+            "description": " A segment to indicate the reference number of the document/message.",
+            "properties": {
+              "reference": {
+                "description": "Identification of a reference. ",
+                "properties": {
+                  "documentLineIdentifier": {
+                    "description": "To identify a line of a document.",
+                    "maxLength": 6,
+                    "propertyName": "documentLineIdentifier",
+                    "title": "Document line identifier",
+                    "type": "string"
+                  },
+                  "referenceCodeQualifier": {
+                    "description": "Code qualifying a reference.",
+                    "maxLength": 3,
+                    "propertyName": "referenceCodeQualifier",
+                    "title": "Reference code qualifier",
+                    "type": "string"
+                  },
+                  "referenceIdentifier": {
+                    "description": "Identifies a reference.",
+                    "maxLength": 70,
+                    "propertyName": "referenceIdentifier",
+                    "title": "Reference identifier",
+                    "type": "string"
+                  },
+                  "referenceVersionIdentifier": {
+                    "description": "To identify the version of a reference.",
+                    "maxLength": 35,
+                    "propertyName": "referenceVersionIdentifier",
+                    "title": "Reference version identifier",
+                    "type": "string"
+                  },
+                  "revisionIdentifier": {
+                    "description": "To identify a revision.",
+                    "maxLength": 6,
+                    "propertyName": "revisionIdentifier",
+                    "title": "Revision identifier",
+                    "type": "string"
+                  }
+                },
+                "propertyName": "reference",
+                "required": [
+                  "referenceCodeQualifier"
+                ],
+                "title": "REFERENCE",
+                "type": "object"
+              }
+            },
+            "propertyName": "reference",
+            "required": [],
+            "title": "REFERENCE",
+            "type": "object"
+          }
+        },
+        "required": [],
+        "type": "object"
+      },
+      "maxItems": 9,
+      "minItems": 0,
+      "propertyName": "grp2",
+      "title": "GRP2",
+      "type": "array"
+    },
+    "grp3": {
+      "description": "GRP3 -  A group of segments to specify the identifications of message sender and message receiver with their contacts and communication channels.",
+      "items": {
+        "properties": {
+          "communicationContactItems": {
+            "description": "Items:  A segment to indicate communication channel type and number inside the party's organization, to which communication should be directed.",
+            "items": {
+              "properties": {
+                "communicationContact": {
+                  "description": "Communication number of a department or employee in a specified channel. ",
+                  "properties": {
+                    "communicationAddressCodeQualifier": {
+                      "description": "Code qualifying the communication address.",
+                      "maxLength": 3,
+                      "propertyName": "communicationAddressCodeQualifier",
+                      "title": "Communication address code qualifier",
+                      "type": "string"
+                    },
+                    "communicationAddressIdentifier": {
+                      "description": "To identify a communication address.",
+                      "maxLength": 512,
+                      "propertyName": "communicationAddressIdentifier",
+                      "title": "Communication address identifier",
+                      "type": "string"
+                    }
+                  },
+                  "propertyName": "communicationContact",
+                  "required": [
+                    "communicationAddressIdentifier",
+                    "communicationAddressCodeQualifier"
+                  ],
+                  "title": "COMMUNICATION CONTACT",
+                  "type": "object"
+                }
+              },
+              "required": [],
+              "type": "object"
+            },
+            "maxItems": 9,
+            "minItems": 0,
+            "propertyName": "communicationContactItems",
+            "title": "COMMUNICATION CONTACT items",
+            "type": "array"
+          },
+          "contactInformationItems": {
+            "description": "Items:  A segment to specify a person or department inside the party's organization, to which communication should be directed.",
+            "items": {
+              "properties": {
+                "contactFunctionCode": {
+                  "description": "Code specifying the function of a contact (e.g. department or person).",
+                  "maxLength": 3,
+                  "propertyName": "contactFunctionCode",
+                  "title": "CONTACT FUNCTION CODE",
+                  "type": "string"
+                },
+                "departmentOrEmployeeDetails": {
+                  "description": "Code and/or name of a department or employee. Code preferred. ",
+                  "properties": {
+                    "departmentOrEmployeeName": {
+                      "description": "Name of a department or employee.",
+                      "maxLength": 35,
+                      "propertyName": "departmentOrEmployeeName",
+                      "title": "Department or employee name",
+                      "type": "string"
+                    },
+                    "departmentOrEmployeeNameCode": {
+                      "description": "Code specifying the name of a department or employee.",
+                      "maxLength": 17,
+                      "propertyName": "departmentOrEmployeeNameCode",
+                      "title": "Department or employee name code",
+                      "type": "string"
+                    }
+                  },
+                  "propertyName": "departmentOrEmployeeDetails",
+                  "required": [],
+                  "title": "DEPARTMENT OR EMPLOYEE DETAILS",
+                  "type": "object"
+                }
+              },
+              "required": [],
+              "type": "object"
+            },
+            "maxItems": 9,
+            "minItems": 0,
+            "propertyName": "contactInformationItems",
+            "title": "CONTACT INFORMATION items",
+            "type": "array"
+          },
+          "nameAndAddress": {
+            "description": " A segment to specify the identification of the message issuer and message receiver.",
+            "properties": {
+              "cityName": {
+                "description": "Name of a city.",
+                "maxLength": 35,
+                "propertyName": "cityName",
+                "title": "CITY NAME",
+                "type": "string"
+              },
+              "countryNameCode": {
+                "description": "Identification of the name of the country or other geographical entity as defined in ISO 3166-1.",
+                "maxLength": 3,
+                "propertyName": "countryNameCode",
+                "title": "COUNTRY NAME CODE",
+                "type": "string"
+              },
+              "countrySubEntityDetails": {
+                "description": "To specify a part of a country (eg county or part of a city). ",
+                "properties": {
+                  "codeListIdentificationCode": {
+                    "description": "Code identifying a user or association maintained code list.",
+                    "maxLength": 17,
+                    "propertyName": "codeListIdentificationCode",
+                    "title": "Code list identification code",
+                    "type": "string"
+                  },
+                  "codeListResponsibleAgencyCode": {
+                    "description": "Code specifying the agency responsible for a code list.",
+                    "maxLength": 3,
+                    "propertyName": "codeListResponsibleAgencyCode",
+                    "title": "Code list responsible agency code",
+                    "type": "string"
+                  },
+                  "countrySubEntityName": {
+                    "description": "Name of a country sub-entity.",
+                    "maxLength": 70,
+                    "propertyName": "countrySubEntityName",
+                    "title": "Country sub-entity name",
+                    "type": "string"
+                  },
+                  "countrySubEntityNameCode": {
+                    "description": "Code specifying the name of a country sub-entity.",
+                    "maxLength": 9,
+                    "propertyName": "countrySubEntityNameCode",
+                    "title": "Country sub-entity name code",
+                    "type": "string"
+                  }
+                },
+                "propertyName": "countrySubEntityDetails",
+                "required": [],
+                "title": "COUNTRY SUB-ENTITY DETAILS",
+                "type": "object"
+              },
+              "nameAndAddress": {
+                "description": "Unstructured name and address: one to five lines. ",
+                "properties": {
+                  "nameAndAddressDescription_1": {
+                    "description": "Free form description of a name and address line.",
+                    "maxLength": 35,
+                    "propertyName": "nameAndAddressDescription_1",
+                    "title": "Name and address description",
+                    "type": "string"
+                  },
+                  "nameAndAddressDescription_2": {
+                    "description": "Free form description of a name and address line.",
+                    "maxLength": 35,
+                    "propertyName": "nameAndAddressDescription_2",
+                    "title": "Name and address description",
+                    "type": "string"
+                  },
+                  "nameAndAddressDescription_3": {
+                    "description": "Free form description of a name and address line.",
+                    "maxLength": 35,
+                    "propertyName": "nameAndAddressDescription_3",
+                    "title": "Name and address description",
+                    "type": "string"
+                  },
+                  "nameAndAddressDescription_4": {
+                    "description": "Free form description of a name and address line.",
+                    "maxLength": 35,
+                    "propertyName": "nameAndAddressDescription_4",
+                    "title": "Name and address description",
+                    "type": "string"
+                  },
+                  "nameAndAddressDescription_5": {
+                    "description": "Free form description of a name and address line.",
+                    "maxLength": 35,
+                    "propertyName": "nameAndAddressDescription_5",
+                    "title": "Name and address description",
+                    "type": "string"
+                  }
+                },
+                "propertyName": "nameAndAddress",
+                "required": [
+                  "nameAndAddressDescription_1"
+                ],
+                "title": "NAME AND ADDRESS",
+                "type": "object"
+              },
+              "partyFunctionCodeQualifier": {
+                "description": "Code giving specific meaning to a party.",
+                "maxLength": 3,
+                "propertyName": "partyFunctionCodeQualifier",
+                "title": "PARTY FUNCTION CODE QUALIFIER",
+                "type": "string"
+              },
+              "partyIdentificationDetails": {
+                "description": "Identification of a transaction party by code. ",
+                "properties": {
+                  "codeListIdentificationCode": {
+                    "description": "Code identifying a user or association maintained code list.",
+                    "maxLength": 17,
+                    "propertyName": "codeListIdentificationCode",
+                    "title": "Code list identification code",
+                    "type": "string"
+                  },
+                  "codeListResponsibleAgencyCode": {
+                    "description": "Code specifying the agency responsible for a code list.",
+                    "maxLength": 3,
+                    "propertyName": "codeListResponsibleAgencyCode",
+                    "title": "Code list responsible agency code",
+                    "type": "string"
+                  },
+                  "partyIdentifier": {
+                    "description": "Code specifying the identity of a party.",
+                    "maxLength": 35,
+                    "propertyName": "partyIdentifier",
+                    "title": "Party identifier",
+                    "type": "string"
+                  }
+                },
+                "propertyName": "partyIdentificationDetails",
+                "required": [
+                  "partyIdentifier"
+                ],
+                "title": "PARTY IDENTIFICATION DETAILS",
+                "type": "object"
+              },
+              "partyName": {
+                "description": "Identification of a transaction party by name, one to five lines. Party name may be formatted. ",
+                "properties": {
+                  "partyNameFormatCode": {
+                    "description": "Code specifying the representation of a party name.",
+                    "maxLength": 3,
+                    "propertyName": "partyNameFormatCode",
+                    "title": "Party name format code",
+                    "type": "string"
+                  },
+                  "partyName_1": {
+                    "description": "Name of a party.",
+                    "maxLength": 35,
+                    "propertyName": "partyName_1",
+                    "title": "Party name",
+                    "type": "string"
+                  },
+                  "partyName_2": {
+                    "description": "Name of a party.",
+                    "maxLength": 35,
+                    "propertyName": "partyName_2",
+                    "title": "Party name",
+                    "type": "string"
+                  },
+                  "partyName_3": {
+                    "description": "Name of a party.",
+                    "maxLength": 35,
+                    "propertyName": "partyName_3",
+                    "title": "Party name",
+                    "type": "string"
+                  },
+                  "partyName_4": {
+                    "description": "Name of a party.",
+                    "maxLength": 35,
+                    "propertyName": "partyName_4",
+                    "title": "Party name",
+                    "type": "string"
+                  },
+                  "partyName_5": {
+                    "description": "Name of a party.",
+                    "maxLength": 35,
+                    "propertyName": "partyName_5",
+                    "title": "Party name",
+                    "type": "string"
+                  }
+                },
+                "propertyName": "partyName",
+                "required": [
+                  "partyName_1"
+                ],
+                "title": "PARTY NAME",
+                "type": "object"
+              },
+              "postalIdentificationCode": {
+                "description": "Code specifying the postal zone or address.",
+                "maxLength": 17,
+                "propertyName": "postalIdentificationCode",
+                "title": "POSTAL IDENTIFICATION CODE",
+                "type": "string"
+              },
+              "street": {
+                "description": "Street address and/or PO Box number in a structured address: one to four lines. ",
+                "properties": {
+                  "streetAndNumberOrPostOfficeBoxIdentifier_1": {
+                    "description": "To identify a street and number and/or Post Office box number.",
+                    "maxLength": 35,
+                    "propertyName": "streetAndNumberOrPostOfficeBoxIdentifier_1",
+                    "title": "Street and number or post office box identifier",
+                    "type": "string"
+                  },
+                  "streetAndNumberOrPostOfficeBoxIdentifier_2": {
+                    "description": "To identify a street and number and/or Post Office box number.",
+                    "maxLength": 35,
+                    "propertyName": "streetAndNumberOrPostOfficeBoxIdentifier_2",
+                    "title": "Street and number or post office box identifier",
+                    "type": "string"
+                  },
+                  "streetAndNumberOrPostOfficeBoxIdentifier_3": {
+                    "description": "To identify a street and number and/or Post Office box number.",
+                    "maxLength": 35,
+                    "propertyName": "streetAndNumberOrPostOfficeBoxIdentifier_3",
+                    "title": "Street and number or post office box identifier",
+                    "type": "string"
+                  },
+                  "streetAndNumberOrPostOfficeBoxIdentifier_4": {
+                    "description": "To identify a street and number and/or Post Office box number.",
+                    "maxLength": 35,
+                    "propertyName": "streetAndNumberOrPostOfficeBoxIdentifier_4",
+                    "title": "Street and number or post office box identifier",
+                    "type": "string"
+                  }
+                },
+                "propertyName": "street",
+                "required": [
+                  "streetAndNumberOrPostOfficeBoxIdentifier_1"
+                ],
+                "title": "STREET",
+                "type": "object"
+              }
+            },
+            "propertyName": "nameAndAddress",
+            "required": [
+              "partyFunctionCodeQualifier"
+            ],
+            "title": "NAME AND ADDRESS",
+            "type": "object"
+          }
+        },
+        "required": [],
+        "type": "object"
+      },
+      "maxItems": 9,
+      "minItems": 0,
+      "propertyName": "grp3",
+      "title": "GRP3",
+      "type": "array"
+    },
+    "grp4": {
+      "description": "GRP4 -  A group of segments to identify the application error(s) within a specified received message and to give specific details related to the error type or to precise the type of acknowledgement.",
+      "items": {
+        "properties": {
+          "applicationErrorInformation": {
+            "description": " A segment identifying the type of application error or acknowledgement within the referenced message. In case of an error, the error code may specify the error in detail (e.g. a measurement relating to a piece of equipment is wrong) or as a rough indication (e.g. a measurement is wrong).",
+            "properties": {
+              "applicationErrorDetail": {
+                "description": "Code assigned by the recipient of a message to indicate a data validation error condition. ",
+                "properties": {
+                  "applicationErrorCode": {
+                    "description": "Code specifying an application error.",
+                    "maxLength": 8,
+                    "propertyName": "applicationErrorCode",
+                    "title": "Application error code",
+                    "type": "string"
+                  },
+                  "codeListIdentificationCode": {
+                    "description": "Code identifying a user or association maintained code list.",
+                    "maxLength": 17,
+                    "propertyName": "codeListIdentificationCode",
+                    "title": "Code list identification code",
+                    "type": "string"
+                  },
+                  "codeListResponsibleAgencyCode": {
+                    "description": "Code specifying the agency responsible for a code list.",
+                    "maxLength": 3,
+                    "propertyName": "codeListResponsibleAgencyCode",
+                    "title": "Code list responsible agency code",
+                    "type": "string"
+                  }
+                },
+                "propertyName": "applicationErrorDetail",
+                "required": [
+                  "applicationErrorCode"
+                ],
+                "title": "APPLICATION ERROR DETAIL",
+                "type": "object"
+              }
+            },
+            "propertyName": "applicationErrorInformation",
+            "required": [],
+            "title": "APPLICATION ERROR INFORMATION",
+            "type": "object"
+          },
+          "freeText": {
+            "description": " A segment to provide explanation and/or supplementary information related to the specified application error or acknowledgement. For example, the explanation may provide exact details relating to a generic error code.",
+            "properties": {
+              "freeTextFormatCode": {
+                "description": "Code specifying the format of free text.",
+                "maxLength": 3,
+                "propertyName": "freeTextFormatCode",
+                "title": "FREE TEXT FORMAT CODE",
+                "type": "string"
+              },
+              "freeTextFunctionCode": {
+                "description": "Code specifying the function of free text.",
+                "maxLength": 3,
+                "propertyName": "freeTextFunctionCode",
+                "title": "FREE TEXT FUNCTION CODE",
+                "type": "string"
+              },
+              "languageNameCode": {
+                "description": "Code specifying the language name.",
+                "maxLength": 3,
+                "propertyName": "languageNameCode",
+                "title": "LANGUAGE NAME CODE",
+                "type": "string"
+              },
+              "textLiteral": {
+                "description": "Free text; one to five lines. ",
+                "properties": {
+                  "freeText_1": {
+                    "description": "Free form text.",
+                    "maxLength": 512,
+                    "propertyName": "freeText_1",
+                    "title": "Free text",
+                    "type": "string"
+                  },
+                  "freeText_2": {
+                    "description": "Free form text.",
+                    "maxLength": 512,
+                    "propertyName": "freeText_2",
+                    "title": "Free text",
+                    "type": "string"
+                  },
+                  "freeText_3": {
+                    "description": "Free form text.",
+                    "maxLength": 512,
+                    "propertyName": "freeText_3",
+                    "title": "Free text",
+                    "type": "string"
+                  },
+                  "freeText_4": {
+                    "description": "Free form text.",
+                    "maxLength": 512,
+                    "propertyName": "freeText_4",
+                    "title": "Free text",
+                    "type": "string"
+                  },
+                  "freeText_5": {
+                    "description": "Free form text.",
+                    "maxLength": 512,
+                    "propertyName": "freeText_5",
+                    "title": "Free text",
+                    "type": "string"
+                  }
+                },
+                "propertyName": "textLiteral",
+                "required": [
+                  "freeText_1"
+                ],
+                "title": "TEXT LITERAL",
+                "type": "object"
+              },
+              "textReference": {
+                "description": "Coded reference to a standard text and its source. ",
+                "properties": {
+                  "codeListIdentificationCode": {
+                    "description": "Code identifying a user or association maintained code list.",
+                    "maxLength": 17,
+                    "propertyName": "codeListIdentificationCode",
+                    "title": "Code list identification code",
+                    "type": "string"
+                  },
+                  "codeListResponsibleAgencyCode": {
+                    "description": "Code specifying the agency responsible for a code list.",
+                    "maxLength": 3,
+                    "propertyName": "codeListResponsibleAgencyCode",
+                    "title": "Code list responsible agency code",
+                    "type": "string"
+                  },
+                  "freeTextDescriptionCode": {
+                    "description": "Code specifying free form text.",
+                    "maxLength": 17,
+                    "propertyName": "freeTextDescriptionCode",
+                    "title": "Free text description code",
+                    "type": "string"
+                  }
+                },
+                "propertyName": "textReference",
+                "required": [
+                  "freeTextDescriptionCode"
+                ],
+                "title": "TEXT REFERENCE",
+                "type": "object"
+              },
+              "textSubjectCodeQualifier": {
+                "description": "Code qualifying the subject of the text.",
+                "maxLength": 3,
+                "propertyName": "textSubjectCodeQualifier",
+                "title": "TEXT SUBJECT CODE QUALIFIER",
+                "type": "string"
+              }
+            },
+            "propertyName": "freeText",
+            "required": [
+              "textSubjectCodeQualifier"
+            ],
+            "title": "FREE TEXT",
+            "type": "object"
+          },
+          "grp5": {
+            "description": "GRP5 -  A group of segments to specify the functional entity reference (e.g. goods item level, equipment level) relating to the specified error; further details can be added to identify the error more precisely.",
+            "items": {
+              "properties": {
+                "freeTextItems": {
+                  "description": "Items:  A segment to provide additional details relating to the reference, e.g. the content of the wrong data (and its exact place in the message).",
+                  "items": {
+                    "properties": {
+                      "freeTextFormatCode": {
+                        "description": "Code specifying the format of free text.",
+                        "maxLength": 3,
+                        "propertyName": "freeTextFormatCode",
+                        "title": "FREE TEXT FORMAT CODE",
+                        "type": "string"
+                      },
+                      "freeTextFunctionCode": {
+                        "description": "Code specifying the function of free text.",
+                        "maxLength": 3,
+                        "propertyName": "freeTextFunctionCode",
+                        "title": "FREE TEXT FUNCTION CODE",
+                        "type": "string"
+                      },
+                      "languageNameCode": {
+                        "description": "Code specifying the language name.",
+                        "maxLength": 3,
+                        "propertyName": "languageNameCode",
+                        "title": "LANGUAGE NAME CODE",
+                        "type": "string"
+                      },
+                      "textLiteral": {
+                        "description": "Free text; one to five lines. ",
+                        "properties": {
+                          "freeText_1": {
+                            "description": "Free form text.",
+                            "maxLength": 512,
+                            "propertyName": "freeText_1",
+                            "title": "Free text",
+                            "type": "string"
+                          },
+                          "freeText_2": {
+                            "description": "Free form text.",
+                            "maxLength": 512,
+                            "propertyName": "freeText_2",
+                            "title": "Free text",
+                            "type": "string"
+                          },
+                          "freeText_3": {
+                            "description": "Free form text.",
+                            "maxLength": 512,
+                            "propertyName": "freeText_3",
+                            "title": "Free text",
+                            "type": "string"
+                          },
+                          "freeText_4": {
+                            "description": "Free form text.",
+                            "maxLength": 512,
+                            "propertyName": "freeText_4",
+                            "title": "Free text",
+                            "type": "string"
+                          },
+                          "freeText_5": {
+                            "description": "Free form text.",
+                            "maxLength": 512,
+                            "propertyName": "freeText_5",
+                            "title": "Free text",
+                            "type": "string"
+                          }
+                        },
+                        "propertyName": "textLiteral",
+                        "required": [
+                          "freeText_1"
+                        ],
+                        "title": "TEXT LITERAL",
+                        "type": "object"
+                      },
+                      "textReference": {
+                        "description": "Coded reference to a standard text and its source. ",
+                        "properties": {
+                          "codeListIdentificationCode": {
+                            "description": "Code identifying a user or association maintained code list.",
+                            "maxLength": 17,
+                            "propertyName": "codeListIdentificationCode",
+                            "title": "Code list identification code",
+                            "type": "string"
+                          },
+                          "codeListResponsibleAgencyCode": {
+                            "description": "Code specifying the agency responsible for a code list.",
+                            "maxLength": 3,
+                            "propertyName": "codeListResponsibleAgencyCode",
+                            "title": "Code list responsible agency code",
+                            "type": "string"
+                          },
+                          "freeTextDescriptionCode": {
+                            "description": "Code specifying free form text.",
+                            "maxLength": 17,
+                            "propertyName": "freeTextDescriptionCode",
+                            "title": "Free text description code",
+                            "type": "string"
+                          }
+                        },
+                        "propertyName": "textReference",
+                        "required": [
+                          "freeTextDescriptionCode"
+                        ],
+                        "title": "TEXT REFERENCE",
+                        "type": "object"
+                      },
+                      "textSubjectCodeQualifier": {
+                        "description": "Code qualifying the subject of the text.",
+                        "maxLength": 3,
+                        "propertyName": "textSubjectCodeQualifier",
+                        "title": "TEXT SUBJECT CODE QUALIFIER",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "textSubjectCodeQualifier"
+                    ],
+                    "type": "object"
+                  },
+                  "maxItems": 9,
+                  "minItems": 0,
+                  "propertyName": "freeTextItems",
+                  "title": "FREE TEXT items",
+                  "type": "array"
+                },
+                "reference": {
+                  "description": " A segment to provide a reference relating to the acknowledgement type or the specified error (e.g. functional entity reference such as equipment level).",
+                  "properties": {
+                    "reference": {
+                      "description": "Identification of a reference. ",
+                      "properties": {
+                        "documentLineIdentifier": {
+                          "description": "To identify a line of a document.",
+                          "maxLength": 6,
+                          "propertyName": "documentLineIdentifier",
+                          "title": "Document line identifier",
+                          "type": "string"
+                        },
+                        "referenceCodeQualifier": {
+                          "description": "Code qualifying a reference.",
+                          "maxLength": 3,
+                          "propertyName": "referenceCodeQualifier",
+                          "title": "Reference code qualifier",
+                          "type": "string"
+                        },
+                        "referenceIdentifier": {
+                          "description": "Identifies a reference.",
+                          "maxLength": 70,
+                          "propertyName": "referenceIdentifier",
+                          "title": "Reference identifier",
+                          "type": "string"
+                        },
+                        "referenceVersionIdentifier": {
+                          "description": "To identify the version of a reference.",
+                          "maxLength": 35,
+                          "propertyName": "referenceVersionIdentifier",
+                          "title": "Reference version identifier",
+                          "type": "string"
+                        },
+                        "revisionIdentifier": {
+                          "description": "To identify a revision.",
+                          "maxLength": 6,
+                          "propertyName": "revisionIdentifier",
+                          "title": "Revision identifier",
+                          "type": "string"
+                        }
+                      },
+                      "propertyName": "reference",
+                      "required": [
+                        "referenceCodeQualifier"
+                      ],
+                      "title": "REFERENCE",
+                      "type": "object"
+                    }
+                  },
+                  "propertyName": "reference",
+                  "required": [],
+                  "title": "REFERENCE",
+                  "type": "object"
+                }
+              },
+              "required": [],
+              "type": "object"
+            },
+            "maxItems": 9,
+            "minItems": 0,
+            "propertyName": "grp5",
+            "title": "GRP5",
+            "type": "array"
+          }
+        },
+        "required": [],
+        "type": "object"
+      },
+      "maxItems": 99999,
+      "minItems": 0,
+      "propertyName": "grp4",
+      "title": "GRP4",
+      "type": "array"
+    },
+    "interchangeHeader": {
+      "description": "Interchange Header Segment",
+      "properties": {
+        "dateAndTimeOfPreparation": {
+          "description": "Date and time of preparation of the interchange.",
+          "properties": {
+            "dateOfPreparation": {
+              "description": "Date the interchange was prepared.",
+              "maxLength": 35,
+              "propertyName": "dateOfPreparation",
+              "title": "Date of preparation",
+              "type": "string"
+            },
+            "timeOfPreparation": {
+              "description": "Time the interchange was prepared.",
+              "maxLength": 4,
+              "propertyName": "timeOfPreparation",
+              "title": "Time of preparation",
+              "type": "string"
+            }
+          },
+          "propertyName": "dateAndTimeOfPreparation",
+          "required": [
+            "dateOfPreparation",
+            "timeOfPreparation"
+          ],
+          "title": "Date and Time of Preparation",
+          "type": "object"
+        },
+        "interchangeControlReference": {
+          "description": "Unique reference assigned by the sender to an interchange.",
+          "maxLength": 14,
+          "propertyName": "interchangeControlReference",
+          "title": "Interchange Control Reference",
+          "type": "string"
+        },
+        "interchangeRecipient": {
+          "description": "Identification of the Recipient of the interchange.",
+          "properties": {
+            "addressForReverseRouting": {
+              "description": "Address for reverse routing.",
+              "maxLength": 14,
+              "propertyName": "addressForReverseRouting",
+              "title": "Address for reverse routing",
+              "type": "string"
+            },
+            "partnerIdentificationCodeQualifier": {
+              "description": "Version number of the syntax identified in the syntax identifier (0001).",
+              "maxLength": 4,
+              "propertyName": "partnerIdentificationCodeQualifier",
+              "title": "Partner Identification Code Qualifier",
+              "type": "string"
+            },
+            "recipientIdentification": {
+              "description": "Name or coded representation of the recipient of a data interchange.",
+              "maxLength": 35,
+              "propertyName": "recipientIdentification",
+              "title": "Recipient Identification",
+              "type": "string"
+            }
+          },
+          "propertyName": "interchangeRecipient",
+          "required": [
+            "recipientIdentification",
+            "partnerIdentificationCodeQualifier"
+          ],
+          "title": "Interchange Recipient",
+          "type": "object"
+        },
+        "interchangeSender": {
+          "description": "Identification of the sender of the interchange.",
+          "properties": {
+            "addressForReverseRouting": {
+              "description": "Address for reverse routing.",
+              "maxLength": 14,
+              "propertyName": "addressForReverseRouting",
+              "title": "Address for reverse routing",
+              "type": "string"
+            },
+            "partnerIdentificationCodeQualifier": {
+              "description": "Version number of the syntax identified in the syntax identifier (0001).",
+              "maxLength": 4,
+              "propertyName": "partnerIdentificationCodeQualifier",
+              "title": "Partner Identification Code Qualifier",
+              "type": "string"
+            },
+            "senderIdentification": {
+              "description": "Name or coded representation of the sender of a data interchange.",
+              "maxLength": 35,
+              "propertyName": "senderIdentification",
+              "title": "Sender Identification",
+              "type": "string"
+            }
+          },
+          "propertyName": "interchangeSender",
+          "required": [
+            "senderIdentification",
+            "partnerIdentificationCodeQualifier"
+          ],
+          "title": "Interchange Sender",
+          "type": "object"
+        },
+        "syntax": {
+          "description": "Identification of the agency controlling the syntax and indication of syntax level.",
+          "properties": {
+            "syntaxIdentifier": {
+              "description": "Coded identification of the agency controlling a syntax and syntax level used in an interchange.",
+              "maxLength": 4,
+              "propertyName": "syntaxIdentifier",
+              "title": "Syntax Identifier",
+              "type": "string"
+            },
+            "syntaxTypeVersionNumber": {
+              "description": "Version number of the syntax identified in the syntax identifier (0001).",
+              "maxLength": 3,
+              "propertyName": "syntaxTypeVersionNumber",
+              "title": "Syntax Type Version Number",
+              "type": "string"
+            }
+          },
+          "propertyName": "syntax",
+          "required": [
+            "syntaxIdentifier",
+            "syntaxTypeVersionNumber"
+          ],
+          "title": "SYNTAX",
+          "type": "object"
+        }
+      },
+      "propertyName": "interchangeHeader",
+      "required": [
+        "interchangeControlReference"
+      ],
+      "title": "Interchange Header",
+      "type": "object"
+    },
+    "interchangeTrailer": {
+      "description": "Close of the Interchange message.",
+      "properties": {
+        "interchangeControlCount": {
+          "description": "Count either of the number of messages or, if used, of the number of functional groups in an interchange.",
+          "max": 9999999999,
+          "propertyName": "interchangeControlCount",
+          "title": "Interchange Control Count",
+          "type": "number"
+        },
+        "interchangeControlReference": {
+          "description": "Unique reference assigned by the sender to an interchange.",
+          "maxLength": 14,
+          "propertyName": "interchangeControlReference",
+          "title": "Interchange Control Reference",
+          "type": "string"
+        }
+      },
+      "propertyName": "interchangeTrailer",
+      "required": [
+        "interchangeControlCount",
+        "interchangeControlReference"
+      ],
+      "title": "Interchange Trailer",
+      "type": "object"
+    },
+    "messageHeader": {
+      "description": " A service segment starting and uniquely identifying a message. The message type code for the Application error and acknowledgement message is APERAK.",
+      "properties": {
+        "commonAccessReference": {
+          "description": "Reference serving as a key to relate all subsequent transfers of data to the same business case or file.",
+          "maxLength": 35,
+          "propertyName": "commonAccessReference",
+          "title": "COMMON ACCESS REFERENCE",
+          "type": "string"
+        },
+        "messageIdentifier": {
+          "description": "Identification of the type, version, etc. of the message being interchanged. ",
+          "properties": {
+            "associationAssignedCode": {
+              "description": "Code, assigned by the association responsible for the design and maintenance of the message type concerned, which further identifies the message.",
+              "maxLength": 6,
+              "propertyName": "associationAssignedCode",
+              "title": "Association assigned code",
+              "type": "string"
+            },
+            "codeListDirectoryVersionNumber": {
+              "description": "Version number of the code list directory.",
+              "maxLength": 6,
+              "propertyName": "codeListDirectoryVersionNumber",
+              "title": "Code list directory version number",
+              "type": "string"
+            },
+            "controllingAgencyCoded": {
+              "description": "Code identifying a controlling agency.",
+              "maxLength": 3,
+              "propertyName": "controllingAgencyCoded",
+              "title": "Controlling agency, coded",
+              "type": "string"
+            },
+            "messageReleaseNumber": {
+              "description": "Release number within the current message version number.",
+              "maxLength": 3,
+              "propertyName": "messageReleaseNumber",
+              "title": "Message release number",
+              "type": "string"
+            },
+            "messageType": {
+              "description": "Code identifying a type of message and assigned by its controlling agency.",
+              "maxLength": 6,
+              "propertyName": "messageType",
+              "title": "Message type",
+              "type": "string"
+            },
+            "messageTypeSubFunctionIdentification": {
+              "description": "Code identifying a sub-function of a message type.",
+              "maxLength": 6,
+              "propertyName": "messageTypeSubFunctionIdentification",
+              "title": "Message type sub-function identification",
+              "type": "string"
+            },
+            "messageVersionNumber": {
+              "description": "Version number of a message type.",
+              "maxLength": 3,
+              "propertyName": "messageVersionNumber",
+              "title": "Message version number",
+              "type": "string"
+            }
+          },
+          "propertyName": "messageIdentifier",
+          "required": [
+            "messageType",
+            "messageVersionNumber",
+            "messageReleaseNumber",
+            "controllingAgencyCoded"
+          ],
+          "title": "MESSAGE IDENTIFIER",
+          "type": "object"
+        },
+        "messageImplementationGuidelineIdentification": {
+          "description": "Identification of a message implementation guideline by its identifier, version, release and source. ",
+          "properties": {
+            "controllingAgencyCoded": {
+              "description": "Code identifying a controlling agency.",
+              "maxLength": 3,
+              "propertyName": "controllingAgencyCoded",
+              "title": "Controlling agency, coded",
+              "type": "string"
+            },
+            "messageImplementationGuidelineIdentification": {
+              "description": "Coded identification of the message implementation guideline, assigned by its controlling agency.",
+              "maxLength": 14,
+              "propertyName": "messageImplementationGuidelineIdentification",
+              "title": "Message implementation guideline identification",
+              "type": "string"
+            },
+            "messageImplementationGuidelineReleaseNumber": {
+              "description": "Release number within the message implementation guideline version number.",
+              "maxLength": 3,
+              "propertyName": "messageImplementationGuidelineReleaseNumber",
+              "title": "Message implementation guideline release number",
+              "type": "string"
+            },
+            "messageImplementationGuidelineVersionNumber": {
+              "description": "Version number of the message implementation guideline.",
+              "maxLength": 3,
+              "propertyName": "messageImplementationGuidelineVersionNumber",
+              "title": "Message implementation guideline version number",
+              "type": "string"
+            }
+          },
+          "propertyName": "messageImplementationGuidelineIdentification",
+          "required": [
+            "messageImplementationGuidelineIdentification"
+          ],
+          "title": "MESSAGE IMPLEMENTATION GUIDELINE IDENTIFICATION",
+          "type": "object"
+        },
+        "messageReferenceNumber": {
+          "description": "Unique message reference assigned by the sender.",
+          "maxLength": 14,
+          "propertyName": "messageReferenceNumber",
+          "title": "MESSAGE REFERENCE NUMBER",
+          "type": "string"
+        },
+        "messageSubsetIdentification": {
+          "description": "Identification of a message subset by its identifier, version, release and source. ",
+          "properties": {
+            "controllingAgencyCoded": {
+              "description": "Code identifying a controlling agency.",
+              "maxLength": 3,
+              "propertyName": "controllingAgencyCoded",
+              "title": "Controlling agency, coded",
+              "type": "string"
+            },
+            "messageSubsetIdentification": {
+              "description": "Coded identification of a message subset, assigned by its controlling agency.",
+              "maxLength": 14,
+              "propertyName": "messageSubsetIdentification",
+              "title": "Message subset identification",
+              "type": "string"
+            },
+            "messageSubsetReleaseNumber": {
+              "description": "Release number within the message subset version number.",
+              "maxLength": 3,
+              "propertyName": "messageSubsetReleaseNumber",
+              "title": "Message subset release number",
+              "type": "string"
+            },
+            "messageSubsetVersionNumber": {
+              "description": "Version number of the message subset.",
+              "maxLength": 3,
+              "propertyName": "messageSubsetVersionNumber",
+              "title": "Message subset version number",
+              "type": "string"
+            }
+          },
+          "propertyName": "messageSubsetIdentification",
+          "required": [
+            "messageSubsetIdentification"
+          ],
+          "title": "MESSAGE SUBSET IDENTIFICATION",
+          "type": "object"
+        },
+        "scenarioIdentification": {
+          "description": "Identification of a scenario. ",
+          "properties": {
+            "controllingAgencyCoded": {
+              "description": "Code identifying a controlling agency.",
+              "maxLength": 3,
+              "propertyName": "controllingAgencyCoded",
+              "title": "Controlling agency, coded",
+              "type": "string"
+            },
+            "scenarioIdentification": {
+              "description": "Code identifying scenario.",
+              "maxLength": 14,
+              "propertyName": "scenarioIdentification",
+              "title": "Scenario identification",
+              "type": "string"
+            },
+            "scenarioReleaseNumber": {
+              "description": "Release number within the scenario version number.",
+              "maxLength": 3,
+              "propertyName": "scenarioReleaseNumber",
+              "title": "Scenario release number",
+              "type": "string"
+            },
+            "scenarioVersionNumber": {
+              "description": "Version number of a scenario.",
+              "maxLength": 3,
+              "propertyName": "scenarioVersionNumber",
+              "title": "Scenario version number",
+              "type": "string"
+            }
+          },
+          "propertyName": "scenarioIdentification",
+          "required": [
+            "scenarioIdentification"
+          ],
+          "title": "SCENARIO IDENTIFICATION",
+          "type": "object"
+        },
+        "statusOfTheTransfer": {
+          "description": "Statement that the message is one in a sequence of transfers relating to the same topic. ",
+          "properties": {
+            "firstAndLastTransfer": {
+              "description": "Indication used for the first and last message in a sequence of messages related to the same topic.",
+              "propertyName": "firstAndLastTransfer",
+              "title": "First and last transfer",
+              "type": "string"
+            },
+            "sequenceOfTransfers": {
+              "description": "Number assigned by the sender indicating the transfer sequence of a message related to the same topic. The message could be an addition or a change to an earlier transfer related to the same topic.",
+              "max": 99,
+              "propertyName": "sequenceOfTransfers",
+              "title": "Sequence of transfers",
+              "type": "number"
+            }
+          },
+          "propertyName": "statusOfTheTransfer",
+          "required": [
+            "sequenceOfTransfers"
+          ],
+          "title": "STATUS OF THE TRANSFER",
+          "type": "object"
+        }
+      },
+      "propertyName": "messageHeader",
+      "required": [
+        "messageReferenceNumber"
+      ],
+      "title": "MESSAGE HEADER",
+      "type": "object"
+    },
+    "messageTrailer": {
+      "description": " A service segment ending a message, giving the total number of segments in the message (including the UNH \u0026 UNT) and the control reference number of the message.",
+      "properties": {
+        "messageReferenceNumber": {
+          "description": "Unique message reference assigned by the sender.",
+          "maxLength": 14,
+          "propertyName": "messageReferenceNumber",
+          "title": "MESSAGE REFERENCE NUMBER",
+          "type": "string"
+        },
+        "numberOfSegmentsInAMessage": {
+          "description": "The number of segments in a message body, plus the message header segment and message trailer segment.",
+          "max": 9999999999,
+          "propertyName": "numberOfSegmentsInAMessage",
+          "title": "NUMBER OF SEGMENTS IN A MESSAGE",
+          "type": "number"
+        }
+      },
+      "propertyName": "messageTrailer",
+      "required": [
+        "numberOfSegmentsInAMessage",
+        "messageReferenceNumber"
+      ],
+      "title": "MESSAGE TRAILER",
+      "type": "object"
+    }
+  },
+  "required": [],
+  "type": "object"
+}

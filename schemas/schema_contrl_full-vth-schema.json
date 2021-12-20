@@ -1,0 +1,2299 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "groupResponseItems": {
+      "description": "GRP3 - Segment Group 3.",
+      "edi_order": 5,
+      "edi_tag": "GRP3",
+      "edi_type": "group",
+      "isRequired": false,
+      "items": {
+        "properties": {
+          "groupResponses": {
+            "description": "Group responses.",
+            "edi_order": 1,
+            "edi_tag": "UCF",
+            "edi_type": "segment",
+            "isRequired": false,
+            "properties": {
+              "actionCoded": {
+                "description": "Action coded.",
+                "edi_order": 4,
+                "edi_ref": "0083",
+                "edi_type": "element",
+                "isRequired": true,
+                "maxLength": 3,
+                "metaInfo": {},
+                "propertyName": "actionCoded",
+                "title": "Action coded",
+                "type": "string"
+              },
+              "applicationRecipientIdentification": {
+                "description": "APPLICATION RECIPIENT IDENTIFICATION.",
+                "edi_order": 3,
+                "edi_ref": "S007",
+                "edi_type": "component",
+                "isRequired": false,
+                "properties": {
+                  "applicationRecipientIdentification": {
+                    "description": "Application recipient identification.",
+                    "edi_order": 1,
+                    "edi_ref": "0044",
+                    "edi_type": "element",
+                    "isRequired": true,
+                    "maxLength": 35,
+                    "metaInfo": {},
+                    "propertyName": "applicationRecipientIdentification",
+                    "title": "Application recipient identification",
+                    "type": "string"
+                  },
+                  "identificationCodeQualifier": {
+                    "description": "Identification code qualifier.",
+                    "edi_order": 2,
+                    "edi_ref": "0007",
+                    "edi_type": "element",
+                    "isRequired": false,
+                    "maxLength": 4,
+                    "metaInfo": {},
+                    "propertyName": "identificationCodeQualifier",
+                    "title": "Identification code qualifier",
+                    "type": "string"
+                  }
+                },
+                "propertyName": "applicationRecipientIdentification",
+                "required": [
+                  "applicationRecipientIdentification"
+                ],
+                "title": "APPLICATION RECIPIENT IDENTIFICATION",
+                "type": "object"
+              },
+              "applicationSenderIdentification": {
+                "description": "APPLICATION SENDER IDENTIFICATION.",
+                "edi_order": 2,
+                "edi_ref": "S006",
+                "edi_type": "component",
+                "isRequired": false,
+                "properties": {
+                  "applicationSenderIdentification": {
+                    "description": "Application sender identification.",
+                    "edi_order": 1,
+                    "edi_ref": "0040",
+                    "edi_type": "element",
+                    "isRequired": true,
+                    "maxLength": 35,
+                    "metaInfo": {},
+                    "propertyName": "applicationSenderIdentification",
+                    "title": "Application sender identification",
+                    "type": "string"
+                  },
+                  "identificationCodeQualifier": {
+                    "description": "Identification code qualifier.",
+                    "edi_order": 2,
+                    "edi_ref": "0007",
+                    "edi_type": "element",
+                    "isRequired": false,
+                    "maxLength": 4,
+                    "metaInfo": {},
+                    "propertyName": "identificationCodeQualifier",
+                    "title": "Identification code qualifier",
+                    "type": "string"
+                  }
+                },
+                "propertyName": "applicationSenderIdentification",
+                "required": [
+                  "applicationSenderIdentification"
+                ],
+                "title": "APPLICATION SENDER IDENTIFICATION",
+                "type": "object"
+              },
+              "dataElementIdentification": {
+                "description": "DATA ELEMENT IDENTIFICATION.",
+                "edi_order": 7,
+                "edi_ref": "S011",
+                "edi_type": "component",
+                "isRequired": false,
+                "properties": {
+                  "erroneousComponentDataElementPosition": {
+                    "description": "Erroneous component data element position.",
+                    "edi_order": 2,
+                    "edi_ref": "0104",
+                    "edi_type": "element",
+                    "isRequired": false,
+                    "max": 999,
+                    "metaInfo": {},
+                    "propertyName": "erroneousComponentDataElementPosition",
+                    "title": "Erroneous component data element position",
+                    "type": "number"
+                  },
+                  "erroneousDataElementOccurrence": {
+                    "description": "Erroneous data element occurrence.",
+                    "edi_order": 3,
+                    "edi_ref": "0136",
+                    "edi_type": "element",
+                    "isRequired": false,
+                    "max": 999999,
+                    "metaInfo": {},
+                    "propertyName": "erroneousDataElementOccurrence",
+                    "title": "Erroneous data element occurrence",
+                    "type": "number"
+                  },
+                  "erroneousDataElementPositionInSegment": {
+                    "description": "Erroneous data element position in segment.",
+                    "edi_order": 1,
+                    "edi_ref": "0098",
+                    "edi_type": "element",
+                    "isRequired": true,
+                    "max": 999,
+                    "metaInfo": {},
+                    "propertyName": "erroneousDataElementPositionInSegment",
+                    "title": "Erroneous data element position in segment",
+                    "type": "number"
+                  }
+                },
+                "propertyName": "dataElementIdentification",
+                "required": [
+                  "erroneousDataElementPositionInSegment"
+                ],
+                "title": "DATA ELEMENT IDENTIFICATION",
+                "type": "object"
+              },
+              "groupReferenceNumber": {
+                "description": "Group reference number.",
+                "edi_order": 1,
+                "edi_ref": "0048",
+                "edi_type": "element",
+                "isRequired": true,
+                "max": 99999999999999,
+                "metaInfo": {},
+                "propertyName": "groupReferenceNumber",
+                "title": "Group reference number",
+                "type": "number"
+              },
+              "securityReferenceNumber": {
+                "description": "Security reference number.",
+                "edi_order": 8,
+                "edi_ref": "0534",
+                "edi_type": "element",
+                "isRequired": false,
+                "maxLength": 14,
+                "metaInfo": {},
+                "propertyName": "securityReferenceNumber",
+                "title": "Security reference number",
+                "type": "string"
+              },
+              "securitySegmentPosition": {
+                "description": "Security segment position.",
+                "edi_order": 9,
+                "edi_ref": "0138",
+                "edi_type": "element",
+                "isRequired": false,
+                "maxLength": 6,
+                "metaInfo": {},
+                "propertyName": "securitySegmentPosition",
+                "title": "Security segment position",
+                "type": "string"
+              },
+              "serviceSegmentTagCoded": {
+                "description": "Service segment tag, coded.",
+                "edi_order": 6,
+                "edi_ref": "0135",
+                "edi_type": "element",
+                "isRequired": false,
+                "maxLength": 3,
+                "metaInfo": {},
+                "propertyName": "serviceSegmentTagCoded",
+                "title": "Service segment tag coded",
+                "type": "string"
+              },
+              "syntaxErrorCoded": {
+                "description": "Syntax error coded.",
+                "edi_order": 5,
+                "edi_ref": "0085",
+                "edi_type": "element",
+                "isRequired": false,
+                "maxLength": 3,
+                "metaInfo": {},
+                "propertyName": "syntaxErrorCoded",
+                "title": "Syntax error coded",
+                "type": "string"
+              }
+            },
+            "propertyName": "groupResponses",
+            "required": [
+              "groupReferenceNumber",
+              "actionCoded"
+            ],
+            "title": "Group responses",
+            "type": "object"
+          },
+          "messageResponses": {
+            "description": "GRP4 - Segment Group 4.",
+            "edi_order": 2,
+            "edi_tag": "GRP4",
+            "edi_type": "group",
+            "isRequired": false,
+            "items": {
+              "properties": {
+                "messagePackageResponse": {
+                  "description": "Message/package response.",
+                  "edi_order": 1,
+                  "edi_tag": "UCM",
+                  "edi_type": "segment",
+                  "isRequired": false,
+                  "properties": {
+                    "actionCoded": {
+                      "description": "Action coded.",
+                      "edi_order": 3,
+                      "edi_ref": "0083",
+                      "edi_type": "element",
+                      "isRequired": true,
+                      "maxLength": 3,
+                      "metaInfo": {},
+                      "propertyName": "actionCoded",
+                      "title": "Action coded",
+                      "type": "string"
+                    },
+                    "dataElementIdentification": {
+                      "description": "DATA ELEMENT IDENTIFICATION.",
+                      "edi_order": 6,
+                      "edi_ref": "S011",
+                      "edi_type": "component",
+                      "isRequired": false,
+                      "properties": {
+                        "erroneousComponentDataElementPosition": {
+                          "description": "Erroneous component data element position.",
+                          "edi_order": 2,
+                          "edi_ref": "0104",
+                          "edi_type": "element",
+                          "isRequired": false,
+                          "max": 999,
+                          "metaInfo": {},
+                          "propertyName": "erroneousComponentDataElementPosition",
+                          "title": "Erroneous component data element position",
+                          "type": "number"
+                        },
+                        "erroneousDataElementOccurrence": {
+                          "description": "Erroneous data element occurrence.",
+                          "edi_order": 3,
+                          "edi_ref": "0136",
+                          "edi_type": "element",
+                          "isRequired": false,
+                          "max": 999999,
+                          "metaInfo": {},
+                          "propertyName": "erroneousDataElementOccurrence",
+                          "title": "Erroneous data element occurrence",
+                          "type": "number"
+                        },
+                        "erroneousDataElementPositionInSegment": {
+                          "description": "Erroneous data element position in segment.",
+                          "edi_order": 1,
+                          "edi_ref": "0098",
+                          "edi_type": "element",
+                          "isRequired": true,
+                          "max": 999,
+                          "metaInfo": {},
+                          "propertyName": "erroneousDataElementPositionInSegment",
+                          "title": "Erroneous data element position in segment",
+                          "type": "number"
+                        }
+                      },
+                      "propertyName": "dataElementIdentification",
+                      "required": [
+                        "erroneousDataElementPositionInSegment"
+                      ],
+                      "title": "DATA ELEMENT IDENTIFICATION",
+                      "type": "object"
+                    },
+                    "messageIdentifier": {
+                      "description": "Identification of the type, version, etc. of the message being interchanged. ",
+                      "edi_order": 2,
+                      "edi_ref": "S009",
+                      "edi_type": "component",
+                      "isRequired": false,
+                      "properties": {
+                        "associationAssignedCode": {
+                          "description": "Code, assigned by the association responsible for the design and maintenance of the message type concerned, which further identifies the message.",
+                          "edi_order": 5,
+                          "edi_ref": "0057",
+                          "edi_type": "element",
+                          "isRequired": false,
+                          "maxLength": 6,
+                          "metaInfo": {},
+                          "propertyName": "associationAssignedCode",
+                          "title": "Association assigned code",
+                          "type": "string"
+                        },
+                        "codeListDirectoryVersionNumber": {
+                          "description": "Version number of the code list directory.",
+                          "edi_order": 6,
+                          "edi_ref": "0110",
+                          "edi_type": "element",
+                          "isRequired": false,
+                          "maxLength": 6,
+                          "metaInfo": {},
+                          "propertyName": "codeListDirectoryVersionNumber",
+                          "title": "Code list directory version number",
+                          "type": "string"
+                        },
+                        "controllingAgencyCoded": {
+                          "description": "Code identifying a controlling agency.",
+                          "edi_order": 4,
+                          "edi_ref": "0051",
+                          "edi_type": "element",
+                          "isRequired": true,
+                          "maxLength": 3,
+                          "metaInfo": {},
+                          "propertyName": "controllingAgencyCoded",
+                          "title": "Controlling agency, coded",
+                          "type": "string"
+                        },
+                        "messageReleaseNumber": {
+                          "description": "Release number within the current message version number.",
+                          "edi_order": 3,
+                          "edi_ref": "0054",
+                          "edi_type": "element",
+                          "isRequired": true,
+                          "maxLength": 3,
+                          "metaInfo": {},
+                          "propertyName": "messageReleaseNumber",
+                          "title": "Message release number",
+                          "type": "string"
+                        },
+                        "messageType": {
+                          "description": "Code identifying a type of message and assigned by its controlling agency.",
+                          "edi_order": 1,
+                          "edi_ref": "0065",
+                          "edi_type": "element",
+                          "isRequired": true,
+                          "maxLength": 6,
+                          "metaInfo": {},
+                          "propertyName": "messageType",
+                          "title": "Message type",
+                          "type": "string"
+                        },
+                        "messageTypeSubFunctionIdentification": {
+                          "description": "Code identifying a sub-function of a message type.",
+                          "edi_order": 7,
+                          "edi_ref": "0113",
+                          "edi_type": "element",
+                          "isRequired": false,
+                          "maxLength": 6,
+                          "metaInfo": {},
+                          "propertyName": "messageTypeSubFunctionIdentification",
+                          "title": "Message type sub-function identification",
+                          "type": "string"
+                        },
+                        "messageVersionNumber": {
+                          "description": "Version number of a message type.",
+                          "edi_order": 2,
+                          "edi_ref": "0052",
+                          "edi_type": "element",
+                          "isRequired": true,
+                          "maxLength": 3,
+                          "metaInfo": {},
+                          "propertyName": "messageVersionNumber",
+                          "title": "Message version number",
+                          "type": "string"
+                        }
+                      },
+                      "propertyName": "messageIdentifier",
+                      "required": [
+                        "messageType",
+                        "messageVersionNumber",
+                        "messageReleaseNumber",
+                        "controllingAgencyCoded"
+                      ],
+                      "title": "MESSAGE IDENTIFIER",
+                      "type": "object"
+                    },
+                    "messageReferenceNumber": {
+                      "description": "Unique message reference assigned by the sender.",
+                      "edi_order": 1,
+                      "edi_ref": "0062",
+                      "edi_type": "element",
+                      "isRequired": true,
+                      "maxLength": 14,
+                      "metaInfo": {},
+                      "propertyName": "messageReferenceNumber",
+                      "title": "MESSAGE REFERENCE NUMBER",
+                      "type": "string"
+                    },
+                    "packageReferenceNumber": {
+                      "description": "Package reference number.",
+                      "edi_order": 7,
+                      "edi_ref": "0800",
+                      "edi_type": "element",
+                      "isRequired": false,
+                      "maxLength": 35,
+                      "metaInfo": {},
+                      "propertyName": "packageReferenceNumber",
+                      "title": "Package reference number",
+                      "type": "string"
+                    },
+                    "referenceIdentification": {
+                      "description": "REFERENCE IDENTIFICATION.",
+                      "edi_order": 8,
+                      "edi_ref": "S020",
+                      "edi_type": "component",
+                      "isRequired": false,
+                      "properties": {
+                        "referenceIdentificationNumber": {
+                          "description": "Reference identification number.",
+                          "edi_order": 2,
+                          "edi_ref": "0802",
+                          "edi_type": "element",
+                          "isRequired": true,
+                          "maxLength": 35,
+                          "metaInfo": {},
+                          "propertyName": "referenceIdentificationNumber",
+                          "title": "Reference identification number",
+                          "type": "string"
+                        },
+                        "referenceQualifier": {
+                          "description": "Reference qualifier.",
+                          "edi_order": 1,
+                          "edi_ref": "0813",
+                          "edi_type": "element",
+                          "isRequired": true,
+                          "maxLength": 3,
+                          "metaInfo": {},
+                          "propertyName": "referenceQualifier",
+                          "title": "Reference qualifier",
+                          "type": "string"
+                        }
+                      },
+                      "propertyName": "referenceIdentification",
+                      "required": [
+                        "referenceQualifier",
+                        "referenceIdentificationNumber"
+                      ],
+                      "title": "REFERENCE IDENTIFICATION",
+                      "type": "object"
+                    },
+                    "securityReferenceNumber": {
+                      "description": "Security reference number.",
+                      "edi_order": 9,
+                      "edi_ref": "0534",
+                      "edi_type": "element",
+                      "isRequired": false,
+                      "maxLength": 14,
+                      "metaInfo": {},
+                      "propertyName": "securityReferenceNumber",
+                      "title": "Security reference number",
+                      "type": "string"
+                    },
+                    "securitySegmentPosition": {
+                      "description": "Security segment position.",
+                      "edi_order": 10,
+                      "edi_ref": "0138",
+                      "edi_type": "element",
+                      "isRequired": false,
+                      "maxLength": 6,
+                      "metaInfo": {},
+                      "propertyName": "securitySegmentPosition",
+                      "title": "Security segment position",
+                      "type": "string"
+                    },
+                    "serviceSegmentTagCoded": {
+                      "description": "Service segment tag, coded.",
+                      "edi_order": 5,
+                      "edi_ref": "0135",
+                      "edi_type": "element",
+                      "isRequired": false,
+                      "maxLength": 3,
+                      "metaInfo": {},
+                      "propertyName": "serviceSegmentTagCoded",
+                      "title": "Service segment tag coded",
+                      "type": "string"
+                    },
+                    "syntaxErrorCoded": {
+                      "description": "Syntax error coded.",
+                      "edi_order": 4,
+                      "edi_ref": "0085",
+                      "edi_type": "element",
+                      "isRequired": false,
+                      "maxLength": 3,
+                      "metaInfo": {},
+                      "propertyName": "syntaxErrorCoded",
+                      "title": "Syntax error coded",
+                      "type": "string"
+                    }
+                  },
+                  "propertyName": "messagePackageResponse",
+                  "required": [
+                    "messageReferenceNumber",
+                    "actionCoded"
+                  ],
+                  "title": "Message/package response",
+                  "type": "object"
+                },
+                "responseDetailItems": {
+                  "description": "GRP5 - Segment Group 5.",
+                  "edi_order": 2,
+                  "edi_tag": "GRP5",
+                  "edi_type": "group",
+                  "isRequired": false,
+                  "items": {
+                    "properties": {
+                      "dataElementErrorIndicationItems": {
+                        "description": "Items: Data element error indication.",
+                        "edi_order": 2,
+                        "edi_tag": "UCD",
+                        "edi_type": "segment",
+                        "isRequired": false,
+                        "items": {
+                          "properties": {
+                            "dataElementIdentification": {
+                              "description": "DATA ELEMENT IDENTIFICATION.",
+                              "edi_order": 2,
+                              "edi_ref": "S011",
+                              "edi_type": "component",
+                              "isRequired": false,
+                              "properties": {
+                                "erroneousComponentDataElementPosition": {
+                                  "description": "Erroneous component data element position.",
+                                  "edi_order": 2,
+                                  "edi_ref": "0104",
+                                  "edi_type": "element",
+                                  "isRequired": false,
+                                  "max": 999,
+                                  "metaInfo": {},
+                                  "propertyName": "erroneousComponentDataElementPosition",
+                                  "title": "Erroneous component data element position",
+                                  "type": "number"
+                                },
+                                "erroneousDataElementOccurrence": {
+                                  "description": "Erroneous data element occurrence.",
+                                  "edi_order": 3,
+                                  "edi_ref": "0136",
+                                  "edi_type": "element",
+                                  "isRequired": false,
+                                  "max": 999999,
+                                  "metaInfo": {},
+                                  "propertyName": "erroneousDataElementOccurrence",
+                                  "title": "Erroneous data element occurrence",
+                                  "type": "number"
+                                },
+                                "erroneousDataElementPositionInSegment": {
+                                  "description": "Erroneous data element position in segment.",
+                                  "edi_order": 1,
+                                  "edi_ref": "0098",
+                                  "edi_type": "element",
+                                  "isRequired": true,
+                                  "max": 999,
+                                  "metaInfo": {},
+                                  "propertyName": "erroneousDataElementPositionInSegment",
+                                  "title": "Erroneous data element position in segment",
+                                  "type": "number"
+                                }
+                              },
+                              "propertyName": "dataElementIdentification",
+                              "required": [
+                                "erroneousDataElementPositionInSegment"
+                              ],
+                              "title": "DATA ELEMENT IDENTIFICATION",
+                              "type": "object"
+                            },
+                            "syntaxErrorCoded": {
+                              "description": "Syntax error, coded.",
+                              "edi_order": 1,
+                              "edi_ref": "0085",
+                              "edi_type": "element",
+                              "isRequired": true,
+                              "maxLength": 3,
+                              "metaInfo": {},
+                              "propertyName": "syntaxErrorCoded",
+                              "title": "Syntax error coded",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "syntaxErrorCoded"
+                          ],
+                          "type": "object"
+                        },
+                        "maxItems": 99,
+                        "minItems": 0,
+                        "propertyName": "dataElementErrorIndicationItems",
+                        "title": "Data element error indication items",
+                        "type": "array"
+                      },
+                      "segmentErrorIndication": {
+                        "description": "Segment error indication.",
+                        "edi_order": 1,
+                        "edi_tag": "UCS",
+                        "edi_type": "segment",
+                        "isRequired": false,
+                        "properties": {
+                          "segmentPositionInMessageBody": {
+                            "description": "Segment position in message body.",
+                            "edi_order": 1,
+                            "edi_ref": "0096",
+                            "edi_type": "element",
+                            "isRequired": true,
+                            "max": 999999,
+                            "metaInfo": {},
+                            "propertyName": "segmentPositionInMessageBody",
+                            "title": "Segment position in message body",
+                            "type": "number"
+                          },
+                          "syntaxErrorCoded": {
+                            "description": "Syntax error, coded.",
+                            "edi_order": 2,
+                            "edi_ref": "0085",
+                            "edi_type": "element",
+                            "isRequired": false,
+                            "maxLength": 3,
+                            "metaInfo": {},
+                            "propertyName": "syntaxErrorCoded",
+                            "title": "Syntax error coded",
+                            "type": "string"
+                          }
+                        },
+                        "propertyName": "segmentErrorIndication",
+                        "required": [
+                          "segmentPositionInMessageBody"
+                        ],
+                        "title": "Segment error indication",
+                        "type": "object"
+                      }
+                    },
+                    "required": [],
+                    "type": "object"
+                  },
+                  "maxItems": 999,
+                  "minItems": 0,
+                  "propertyName": "responseDetailItems",
+                  "title": "GRP5",
+                  "type": "array"
+                }
+              },
+              "required": [],
+              "type": "object"
+            },
+            "maxItems": 999999,
+            "minItems": 0,
+            "propertyName": "messageResponses",
+            "title": "GRP4",
+            "type": "array"
+          }
+        },
+        "required": [],
+        "type": "object"
+      },
+      "maxItems": 999999,
+      "minItems": 0,
+      "propertyName": "groupResponseItems",
+      "title": "GRP3",
+      "type": "array"
+    },
+    "interchangeHeader": {
+      "description": "Interchange Header Segment",
+      "edi_order": 1,
+      "edi_tag": "UNB",
+      "edi_type": "segment",
+      "isRequired": false,
+      "properties": {
+        "dateAndTimeOfPreparation": {
+          "description": "Date and time of preparation of the interchange.",
+          "edi_order": 4,
+          "edi_ref": "S004",
+          "edi_type": "component",
+          "isRequired": false,
+          "properties": {
+            "dateOfPreparation": {
+              "description": "Date the interchange was prepared.",
+              "edi_order": 1,
+              "edi_ref": "0017",
+              "edi_type": "element",
+              "isRequired": true,
+              "maxLength": 35,
+              "metaInfo": {},
+              "propertyName": "dateOfPreparation",
+              "title": "Date of preparation",
+              "type": "string"
+            },
+            "timeOfPreparation": {
+              "description": "Time the interchange was prepared.",
+              "edi_order": 2,
+              "edi_ref": "0019",
+              "edi_type": "element",
+              "isRequired": true,
+              "maxLength": 4,
+              "metaInfo": {},
+              "propertyName": "timeOfPreparation",
+              "title": "Time of preparation",
+              "type": "string"
+            }
+          },
+          "propertyName": "dateAndTimeOfPreparation",
+          "required": [
+            "dateOfPreparation",
+            "timeOfPreparation"
+          ],
+          "title": "Date and Time of Preparation",
+          "type": "object"
+        },
+        "interchangeControlReference": {
+          "description": "Unique reference assigned by the sender to an interchange.",
+          "edi_order": 5,
+          "edi_ref": "0020",
+          "edi_type": "element",
+          "isRequired": true,
+          "maxLength": 14,
+          "metaInfo": {},
+          "propertyName": "interchangeControlReference",
+          "title": "Interchange Control Reference",
+          "type": "string"
+        },
+        "interchangeRecipient": {
+          "description": "Identification of the Recipient of the interchange.",
+          "edi_order": 3,
+          "edi_ref": "S003",
+          "edi_type": "component",
+          "isRequired": false,
+          "properties": {
+            "addressForReverseRouting": {
+              "description": "Address for reverse routing.",
+              "edi_order": 3,
+              "edi_ref": "0014",
+              "edi_type": "element",
+              "isRequired": false,
+              "maxLength": 14,
+              "metaInfo": {},
+              "propertyName": "addressForReverseRouting",
+              "title": "Address for reverse routing",
+              "type": "string"
+            },
+            "partnerIdentificationCodeQualifier": {
+              "description": "Version number of the syntax identified in the syntax identifier (0001).",
+              "edi_order": 2,
+              "edi_ref": "0007",
+              "edi_type": "element",
+              "isRequired": true,
+              "maxLength": 4,
+              "metaInfo": {},
+              "propertyName": "partnerIdentificationCodeQualifier",
+              "title": "Partner Identification Code Qualifier",
+              "type": "string"
+            },
+            "recipientIdentification": {
+              "description": "Name or coded representation of the recipient of a data interchange.",
+              "edi_order": 1,
+              "edi_ref": "0010",
+              "edi_type": "element",
+              "isRequired": true,
+              "maxLength": 35,
+              "metaInfo": {},
+              "propertyName": "recipientIdentification",
+              "title": "Recipient Identification",
+              "type": "string"
+            }
+          },
+          "propertyName": "interchangeRecipient",
+          "required": [
+            "recipientIdentification",
+            "partnerIdentificationCodeQualifier"
+          ],
+          "title": "Interchange Recipient",
+          "type": "object"
+        },
+        "interchangeSender": {
+          "description": "Identification of the sender of the interchange.",
+          "edi_order": 2,
+          "edi_ref": "S002",
+          "edi_type": "component",
+          "isRequired": false,
+          "properties": {
+            "addressForReverseRouting": {
+              "description": "Address for reverse routing.",
+              "edi_order": 3,
+              "edi_ref": "0008",
+              "edi_type": "element",
+              "isRequired": false,
+              "maxLength": 14,
+              "metaInfo": {},
+              "propertyName": "addressForReverseRouting",
+              "title": "Address for reverse routing",
+              "type": "string"
+            },
+            "partnerIdentificationCodeQualifier": {
+              "description": "Version number of the syntax identified in the syntax identifier (0001).",
+              "edi_order": 2,
+              "edi_ref": "0007",
+              "edi_type": "element",
+              "isRequired": true,
+              "maxLength": 4,
+              "metaInfo": {},
+              "propertyName": "partnerIdentificationCodeQualifier",
+              "title": "Partner Identification Code Qualifier",
+              "type": "string"
+            },
+            "senderIdentification": {
+              "description": "Name or coded representation of the sender of a data interchange.",
+              "edi_order": 1,
+              "edi_ref": "0004",
+              "edi_type": "element",
+              "isRequired": true,
+              "maxLength": 35,
+              "metaInfo": {},
+              "propertyName": "senderIdentification",
+              "title": "Sender Identification",
+              "type": "string"
+            }
+          },
+          "propertyName": "interchangeSender",
+          "required": [
+            "senderIdentification",
+            "partnerIdentificationCodeQualifier"
+          ],
+          "title": "Interchange Sender",
+          "type": "object"
+        },
+        "syntax": {
+          "description": "Identification of the agency controlling the syntax and indication of syntax level.",
+          "edi_order": 1,
+          "edi_ref": "S001",
+          "edi_type": "component",
+          "isRequired": false,
+          "properties": {
+            "syntaxIdentifier": {
+              "description": "Coded identification of the agency controlling a syntax and syntax level used in an interchange.",
+              "edi_order": 1,
+              "edi_ref": "0001",
+              "edi_type": "element",
+              "isRequired": true,
+              "maxLength": 4,
+              "metaInfo": {},
+              "propertyName": "syntaxIdentifier",
+              "title": "Syntax Identifier",
+              "type": "string"
+            },
+            "syntaxTypeVersionNumber": {
+              "description": "Version number of the syntax identified in the syntax identifier (0001).",
+              "edi_order": 2,
+              "edi_ref": "0002",
+              "edi_type": "element",
+              "isRequired": true,
+              "maxLength": 3,
+              "metaInfo": {},
+              "propertyName": "syntaxTypeVersionNumber",
+              "title": "Syntax Type Version Number",
+              "type": "string"
+            }
+          },
+          "propertyName": "syntax",
+          "required": [
+            "syntaxIdentifier",
+            "syntaxTypeVersionNumber"
+          ],
+          "title": "SYNTAX",
+          "type": "object"
+        }
+      },
+      "propertyName": "interchangeHeader",
+      "required": [
+        "interchangeControlReference"
+      ],
+      "title": "Interchange Header",
+      "type": "object"
+    },
+    "interchangeResponse": {
+      "description": "To identify the subject interchange, to indicate interchange receipt, to indicate acknowledgement or rejection (action taken) of the UNA, UNB and UNZ segments, and to identify any error related to these segments. It can also identify errors related to the USA, USC, USD, USH, USR, UST, or USU security segments when they appear at the interchange level. Depending on the action code, it may also indicate the action taken on the groups, messages, and packages within that interchange.",
+      "edi_order": 3,
+      "edi_tag": "UCI",
+      "edi_type": "segment",
+      "isRequired": false,
+      "properties": {
+        "actionCoded": {
+          "description": "Action coded.",
+          "edi_order": 4,
+          "edi_ref": "0083",
+          "edi_type": "element",
+          "isRequired": false,
+          "maxLength": 3,
+          "metaInfo": {},
+          "propertyName": "actionCoded",
+          "title": "Action coded",
+          "type": "string"
+        },
+        "dataElementIdentification": {
+          "description": "DATA ELEMENT IDENTIFICATION.",
+          "edi_order": 7,
+          "edi_ref": "S011",
+          "edi_type": "component",
+          "isRequired": false,
+          "properties": {
+            "erroneousComponentDataElementPosition": {
+              "description": "Erroneous component data element position.",
+              "edi_order": 2,
+              "edi_ref": "0104",
+              "edi_type": "element",
+              "isRequired": false,
+              "max": 999,
+              "metaInfo": {},
+              "propertyName": "erroneousComponentDataElementPosition",
+              "title": "Erroneous component data element position",
+              "type": "number"
+            },
+            "erroneousDataElementOccurrence": {
+              "description": "Erroneous data element occurrence.",
+              "edi_order": 3,
+              "edi_ref": "0136",
+              "edi_type": "element",
+              "isRequired": false,
+              "max": 999999,
+              "metaInfo": {},
+              "propertyName": "erroneousDataElementOccurrence",
+              "title": "Erroneous data element occurrence",
+              "type": "number"
+            },
+            "erroneousDataElementPositionInSegment": {
+              "description": "Erroneous data element position in segment.",
+              "edi_order": 1,
+              "edi_ref": "0098",
+              "edi_type": "element",
+              "isRequired": true,
+              "max": 999,
+              "metaInfo": {},
+              "propertyName": "erroneousDataElementPositionInSegment",
+              "title": "Erroneous data element position in segment",
+              "type": "number"
+            }
+          },
+          "propertyName": "dataElementIdentification",
+          "required": [
+            "erroneousDataElementPositionInSegment"
+          ],
+          "title": "DATA ELEMENT IDENTIFICATION",
+          "type": "object"
+        },
+        "interchangeControlReference": {
+          "description": "Interchange control reference.",
+          "edi_order": 1,
+          "edi_ref": "0020",
+          "edi_type": "element",
+          "isRequired": true,
+          "maxLength": 14,
+          "metaInfo": {},
+          "propertyName": "interchangeControlReference",
+          "title": "Interchange control reference",
+          "type": "string"
+        },
+        "interchangeRecipient": {
+          "description": "INTERCHANGE RECIPIENT.",
+          "edi_order": 3,
+          "edi_ref": "S003",
+          "edi_type": "component",
+          "isRequired": false,
+          "properties": {
+            "identificationCodeQualifier": {
+              "description": "Code identifying a user or association maintained code list.",
+              "edi_order": 2,
+              "edi_ref": "0007",
+              "edi_type": "element",
+              "isRequired": false,
+              "maxLength": 4,
+              "metaInfo": {},
+              "propertyName": "identificationCodeQualifier",
+              "title": "Identification code qualifier ",
+              "type": "string"
+            },
+            "interchangeRecipientIdentification": {
+              "description": "Interchange recipient identification.",
+              "edi_order": 1,
+              "edi_ref": "0010",
+              "edi_type": "element",
+              "isRequired": true,
+              "maxLength": 35,
+              "metaInfo": {},
+              "propertyName": "interchangeRecipientIdentification",
+              "title": "Interchange recipient identification",
+              "type": "string"
+            },
+            "interchangeRecipientInternalIdentification": {
+              "description": "Interchange recipient internal identification.",
+              "edi_order": 3,
+              "edi_ref": "0014",
+              "edi_type": "element",
+              "isRequired": false,
+              "maxLength": 35,
+              "metaInfo": {},
+              "propertyName": "interchangeRecipientInternalIdentification",
+              "title": "Interchange recipient internal identification",
+              "type": "string"
+            },
+            "interchangeRecipientInternalSubIdentification": {
+              "description": "Interchange recipient internal sub-identification.",
+              "edi_order": 4,
+              "edi_ref": "0046",
+              "edi_type": "element",
+              "isRequired": false,
+              "maxLength": 35,
+              "metaInfo": {},
+              "propertyName": "interchangeRecipientInternalSubIdentification",
+              "title": "Interchange recipient internal sub-identification",
+              "type": "string"
+            }
+          },
+          "propertyName": "interchangeRecipient",
+          "required": [
+            "interchangeRecipientIdentification"
+          ],
+          "title": "INTERCHANGE RECIPIENT",
+          "type": "object"
+        },
+        "interchangeSender": {
+          "description": "INTERCHANGE SENDER.",
+          "edi_order": 2,
+          "edi_ref": "S002",
+          "edi_type": "component",
+          "isRequired": false,
+          "properties": {
+            "identificationCodeQualifier": {
+              "description": "Code identifying a user or association maintained code list.",
+              "edi_order": 2,
+              "edi_ref": "0007",
+              "edi_type": "element",
+              "isRequired": false,
+              "maxLength": 4,
+              "metaInfo": {},
+              "propertyName": "identificationCodeQualifier",
+              "title": "Identification code qualifier ",
+              "type": "string"
+            },
+            "interchangeSenderIdentification": {
+              "description": "Interchange sender identification.",
+              "edi_order": 1,
+              "edi_ref": "0004",
+              "edi_type": "element",
+              "isRequired": true,
+              "maxLength": 35,
+              "metaInfo": {},
+              "propertyName": "interchangeSenderIdentification",
+              "title": "Interchange sender identification",
+              "type": "string"
+            },
+            "interchangeSenderInternalIdentification": {
+              "description": "Interchange sender internal identification.",
+              "edi_order": 3,
+              "edi_ref": "0008",
+              "edi_type": "element",
+              "isRequired": false,
+              "maxLength": 35,
+              "metaInfo": {},
+              "propertyName": "interchangeSenderInternalIdentification",
+              "title": "Interchange sender internal identification",
+              "type": "string"
+            },
+            "interchangeSenderInternalSubIdentification": {
+              "description": "Interchange sender internal sub-identification.",
+              "edi_order": 4,
+              "edi_ref": "0042",
+              "edi_type": "element",
+              "isRequired": false,
+              "maxLength": 35,
+              "metaInfo": {},
+              "propertyName": "interchangeSenderInternalSubIdentification",
+              "title": "Interchange sender internal sub-identification",
+              "type": "string"
+            }
+          },
+          "propertyName": "interchangeSender",
+          "required": [
+            "interchangeSenderIdentification"
+          ],
+          "title": "INTERCHANGE SENDER",
+          "type": "object"
+        },
+        "securityReferenceNumber": {
+          "description": "Security reference number.",
+          "edi_order": 8,
+          "edi_ref": "0534",
+          "edi_type": "element",
+          "isRequired": false,
+          "maxLength": 14,
+          "metaInfo": {},
+          "propertyName": "securityReferenceNumber",
+          "title": "Security reference number",
+          "type": "string"
+        },
+        "securitySegmentPosition": {
+          "description": "Security segment position.",
+          "edi_order": 9,
+          "edi_ref": "0138",
+          "edi_type": "element",
+          "isRequired": false,
+          "maxLength": 6,
+          "metaInfo": {},
+          "propertyName": "securitySegmentPosition",
+          "title": "Security segment position",
+          "type": "string"
+        },
+        "serviceSegmentTagCoded": {
+          "description": "Service segment tag, coded.",
+          "edi_order": 6,
+          "edi_ref": "0135",
+          "edi_type": "element",
+          "isRequired": false,
+          "maxLength": 3,
+          "metaInfo": {},
+          "propertyName": "serviceSegmentTagCoded",
+          "title": "Service segment tag coded",
+          "type": "string"
+        },
+        "syntaxErrorCoded": {
+          "description": "Syntax error coded.",
+          "edi_order": 5,
+          "edi_ref": "0085",
+          "edi_type": "element",
+          "isRequired": false,
+          "maxLength": 3,
+          "metaInfo": {},
+          "propertyName": "syntaxErrorCoded",
+          "title": "Syntax error coded",
+          "type": "string"
+        }
+      },
+      "propertyName": "interchangeResponse",
+      "required": [
+        "interchangeControlReference"
+      ],
+      "title": "Interchange response",
+      "type": "object"
+    },
+    "interchangeTrailer": {
+      "description": "Close of the Interchange message.",
+      "edi_order": 7,
+      "edi_tag": "UNZ",
+      "edi_type": "segment",
+      "isRequired": false,
+      "properties": {
+        "interchangeControlCount": {
+          "description": "Count either of the number of messages or, if used, of the number of functional groups in an interchange.",
+          "edi_order": 1,
+          "edi_ref": "0036",
+          "edi_type": "element",
+          "isRequired": true,
+          "max": 9999999999,
+          "metaInfo": {},
+          "propertyName": "interchangeControlCount",
+          "title": "Interchange Control Count",
+          "type": "number"
+        },
+        "interchangeControlReference": {
+          "description": "Unique reference assigned by the sender to an interchange.",
+          "edi_order": 2,
+          "edi_ref": "0020",
+          "edi_type": "element",
+          "isRequired": true,
+          "maxLength": 14,
+          "metaInfo": {},
+          "propertyName": "interchangeControlReference",
+          "title": "Interchange Control Reference",
+          "type": "string"
+        }
+      },
+      "propertyName": "interchangeTrailer",
+      "required": [
+        "interchangeControlCount",
+        "interchangeControlReference"
+      ],
+      "title": "Interchange Trailer",
+      "type": "object"
+    },
+    "messageHeader": {
+      "description": " A service segment starting and uniquely identifying a message. The message type code for the Application error and acknowledgement message is APERAK.",
+      "edi_order": 2,
+      "edi_tag": "UNH",
+      "edi_type": "segment",
+      "isRequired": false,
+      "properties": {
+        "commonAccessReference": {
+          "description": "Reference serving as a key to relate all subsequent transfers of data to the same business case or file.",
+          "edi_order": 3,
+          "edi_ref": "0068",
+          "edi_type": "element",
+          "isRequired": false,
+          "maxLength": 35,
+          "metaInfo": {},
+          "propertyName": "commonAccessReference",
+          "title": "COMMON ACCESS REFERENCE",
+          "type": "string"
+        },
+        "messageIdentifier": {
+          "description": "Identification of the type, version, etc. of the message being interchanged. ",
+          "edi_order": 2,
+          "edi_ref": "S009",
+          "edi_type": "component",
+          "isRequired": false,
+          "properties": {
+            "associationAssignedCode": {
+              "description": "Code, assigned by the association responsible for the design and maintenance of the message type concerned, which further identifies the message.",
+              "edi_order": 5,
+              "edi_ref": "0057",
+              "edi_type": "element",
+              "isRequired": false,
+              "maxLength": 6,
+              "metaInfo": {},
+              "propertyName": "associationAssignedCode",
+              "title": "Association assigned code",
+              "type": "string"
+            },
+            "codeListDirectoryVersionNumber": {
+              "description": "Version number of the code list directory.",
+              "edi_order": 6,
+              "edi_ref": "0110",
+              "edi_type": "element",
+              "isRequired": false,
+              "maxLength": 6,
+              "metaInfo": {},
+              "propertyName": "codeListDirectoryVersionNumber",
+              "title": "Code list directory version number",
+              "type": "string"
+            },
+            "controllingAgencyCoded": {
+              "description": "Code identifying a controlling agency.",
+              "edi_order": 4,
+              "edi_ref": "0051",
+              "edi_type": "element",
+              "isRequired": true,
+              "maxLength": 3,
+              "metaInfo": {},
+              "propertyName": "controllingAgencyCoded",
+              "title": "Controlling agency, coded",
+              "type": "string"
+            },
+            "messageReleaseNumber": {
+              "description": "Release number within the current message version number.",
+              "edi_order": 3,
+              "edi_ref": "0054",
+              "edi_type": "element",
+              "isRequired": true,
+              "maxLength": 3,
+              "metaInfo": {},
+              "propertyName": "messageReleaseNumber",
+              "title": "Message release number",
+              "type": "string"
+            },
+            "messageType": {
+              "description": "Code identifying a type of message and assigned by its controlling agency.",
+              "edi_order": 1,
+              "edi_ref": "0065",
+              "edi_type": "element",
+              "isRequired": true,
+              "maxLength": 6,
+              "metaInfo": {},
+              "propertyName": "messageType",
+              "title": "Message type",
+              "type": "string"
+            },
+            "messageTypeSubFunctionIdentification": {
+              "description": "Code identifying a sub-function of a message type.",
+              "edi_order": 7,
+              "edi_ref": "0113",
+              "edi_type": "element",
+              "isRequired": false,
+              "maxLength": 6,
+              "metaInfo": {},
+              "propertyName": "messageTypeSubFunctionIdentification",
+              "title": "Message type sub-function identification",
+              "type": "string"
+            },
+            "messageVersionNumber": {
+              "description": "Version number of a message type.",
+              "edi_order": 2,
+              "edi_ref": "0052",
+              "edi_type": "element",
+              "isRequired": true,
+              "maxLength": 3,
+              "metaInfo": {},
+              "propertyName": "messageVersionNumber",
+              "title": "Message version number",
+              "type": "string"
+            }
+          },
+          "propertyName": "messageIdentifier",
+          "required": [
+            "messageType",
+            "messageVersionNumber",
+            "messageReleaseNumber",
+            "controllingAgencyCoded"
+          ],
+          "title": "MESSAGE IDENTIFIER",
+          "type": "object"
+        },
+        "messageImplementationGuidelineIdentification": {
+          "description": "Identification of a message implementation guideline by its identifier, version, release and source. ",
+          "edi_order": 6,
+          "edi_ref": "S017",
+          "edi_type": "component",
+          "isRequired": false,
+          "properties": {
+            "controllingAgencyCoded": {
+              "description": "Code identifying a controlling agency.",
+              "edi_order": 4,
+              "edi_ref": "0051",
+              "edi_type": "element",
+              "isRequired": false,
+              "maxLength": 3,
+              "metaInfo": {},
+              "propertyName": "controllingAgencyCoded",
+              "title": "Controlling agency, coded",
+              "type": "string"
+            },
+            "messageImplementationGuidelineIdentification": {
+              "description": "Coded identification of the message implementation guideline, assigned by its controlling agency.",
+              "edi_order": 1,
+              "edi_ref": "0121",
+              "edi_type": "element",
+              "isRequired": true,
+              "maxLength": 14,
+              "metaInfo": {},
+              "propertyName": "messageImplementationGuidelineIdentification",
+              "title": "Message implementation guideline identification",
+              "type": "string"
+            },
+            "messageImplementationGuidelineReleaseNumber": {
+              "description": "Release number within the message implementation guideline version number.",
+              "edi_order": 3,
+              "edi_ref": "0124",
+              "edi_type": "element",
+              "isRequired": false,
+              "maxLength": 3,
+              "metaInfo": {},
+              "propertyName": "messageImplementationGuidelineReleaseNumber",
+              "title": "Message implementation guideline release number",
+              "type": "string"
+            },
+            "messageImplementationGuidelineVersionNumber": {
+              "description": "Version number of the message implementation guideline.",
+              "edi_order": 2,
+              "edi_ref": "0122",
+              "edi_type": "element",
+              "isRequired": false,
+              "maxLength": 3,
+              "metaInfo": {},
+              "propertyName": "messageImplementationGuidelineVersionNumber",
+              "title": "Message implementation guideline version number",
+              "type": "string"
+            }
+          },
+          "propertyName": "messageImplementationGuidelineIdentification",
+          "required": [
+            "messageImplementationGuidelineIdentification"
+          ],
+          "title": "MESSAGE IMPLEMENTATION GUIDELINE IDENTIFICATION",
+          "type": "object"
+        },
+        "messageReferenceNumber": {
+          "description": "Unique message reference assigned by the sender.",
+          "edi_order": 1,
+          "edi_ref": "0062",
+          "edi_type": "element",
+          "isRequired": true,
+          "maxLength": 14,
+          "metaInfo": {},
+          "propertyName": "messageReferenceNumber",
+          "title": "MESSAGE REFERENCE NUMBER",
+          "type": "string"
+        },
+        "messageSubsetIdentification": {
+          "description": "Identification of a message subset by its identifier, version, release and source. ",
+          "edi_order": 5,
+          "edi_ref": "S016",
+          "edi_type": "component",
+          "isRequired": false,
+          "properties": {
+            "controllingAgencyCoded": {
+              "description": "Code identifying a controlling agency.",
+              "edi_order": 4,
+              "edi_ref": "0051",
+              "edi_type": "element",
+              "isRequired": false,
+              "maxLength": 3,
+              "metaInfo": {},
+              "propertyName": "controllingAgencyCoded",
+              "title": "Controlling agency, coded",
+              "type": "string"
+            },
+            "messageSubsetIdentification": {
+              "description": "Coded identification of a message subset, assigned by its controlling agency.",
+              "edi_order": 1,
+              "edi_ref": "0115",
+              "edi_type": "element",
+              "isRequired": true,
+              "maxLength": 14,
+              "metaInfo": {},
+              "propertyName": "messageSubsetIdentification",
+              "title": "Message subset identification",
+              "type": "string"
+            },
+            "messageSubsetReleaseNumber": {
+              "description": "Release number within the message subset version number.",
+              "edi_order": 3,
+              "edi_ref": "0118",
+              "edi_type": "element",
+              "isRequired": false,
+              "maxLength": 3,
+              "metaInfo": {},
+              "propertyName": "messageSubsetReleaseNumber",
+              "title": "Message subset release number",
+              "type": "string"
+            },
+            "messageSubsetVersionNumber": {
+              "description": "Version number of the message subset.",
+              "edi_order": 2,
+              "edi_ref": "0116",
+              "edi_type": "element",
+              "isRequired": false,
+              "maxLength": 3,
+              "metaInfo": {},
+              "propertyName": "messageSubsetVersionNumber",
+              "title": "Message subset version number",
+              "type": "string"
+            }
+          },
+          "propertyName": "messageSubsetIdentification",
+          "required": [
+            "messageSubsetIdentification"
+          ],
+          "title": "MESSAGE SUBSET IDENTIFICATION",
+          "type": "object"
+        },
+        "scenarioIdentification": {
+          "description": "Identification of a scenario. ",
+          "edi_order": 7,
+          "edi_ref": "S018",
+          "edi_type": "component",
+          "isRequired": false,
+          "properties": {
+            "controllingAgencyCoded": {
+              "description": "Code identifying a controlling agency.",
+              "edi_order": 4,
+              "edi_ref": "0051",
+              "edi_type": "element",
+              "isRequired": false,
+              "maxLength": 3,
+              "metaInfo": {},
+              "propertyName": "controllingAgencyCoded",
+              "title": "Controlling agency, coded",
+              "type": "string"
+            },
+            "scenarioIdentification": {
+              "description": "Code identifying scenario.",
+              "edi_order": 1,
+              "edi_ref": "0127",
+              "edi_type": "element",
+              "isRequired": true,
+              "maxLength": 14,
+              "metaInfo": {},
+              "propertyName": "scenarioIdentification",
+              "title": "Scenario identification",
+              "type": "string"
+            },
+            "scenarioReleaseNumber": {
+              "description": "Release number within the scenario version number.",
+              "edi_order": 3,
+              "edi_ref": "0130",
+              "edi_type": "element",
+              "isRequired": false,
+              "maxLength": 3,
+              "metaInfo": {},
+              "propertyName": "scenarioReleaseNumber",
+              "title": "Scenario release number",
+              "type": "string"
+            },
+            "scenarioVersionNumber": {
+              "description": "Version number of a scenario.",
+              "edi_order": 2,
+              "edi_ref": "0128",
+              "edi_type": "element",
+              "isRequired": false,
+              "maxLength": 3,
+              "metaInfo": {},
+              "propertyName": "scenarioVersionNumber",
+              "title": "Scenario version number",
+              "type": "string"
+            }
+          },
+          "propertyName": "scenarioIdentification",
+          "required": [
+            "scenarioIdentification"
+          ],
+          "title": "SCENARIO IDENTIFICATION",
+          "type": "object"
+        },
+        "statusOfTheTransfer": {
+          "description": "Statement that the message is one in a sequence of transfers relating to the same topic. ",
+          "edi_order": 4,
+          "edi_ref": "S010",
+          "edi_type": "component",
+          "isRequired": false,
+          "properties": {
+            "firstAndLastTransfer": {
+              "description": "Indication used for the first and last message in a sequence of messages related to the same topic.",
+              "edi_order": 2,
+              "edi_ref": "0073",
+              "edi_type": "element",
+              "isRequired": false,
+              "metaInfo": {},
+              "propertyName": "firstAndLastTransfer",
+              "title": "First and last transfer",
+              "type": "string"
+            },
+            "sequenceOfTransfers": {
+              "description": "Number assigned by the sender indicating the transfer sequence of a message related to the same topic. The message could be an addition or a change to an earlier transfer related to the same topic.",
+              "edi_order": 1,
+              "edi_ref": "0070",
+              "edi_type": "element",
+              "isRequired": true,
+              "max": 99,
+              "metaInfo": {},
+              "propertyName": "sequenceOfTransfers",
+              "title": "Sequence of transfers",
+              "type": "number"
+            }
+          },
+          "propertyName": "statusOfTheTransfer",
+          "required": [
+            "sequenceOfTransfers"
+          ],
+          "title": "STATUS OF THE TRANSFER",
+          "type": "object"
+        }
+      },
+      "propertyName": "messageHeader",
+      "required": [
+        "messageReferenceNumber"
+      ],
+      "title": "MESSAGE HEADER",
+      "type": "object"
+    },
+    "messageResponses": {
+      "description": "GRP1 - Segment Group 1.",
+      "edi_order": 4,
+      "edi_tag": "GRP1",
+      "edi_type": "group",
+      "isRequired": false,
+      "items": {
+        "properties": {
+          "freeTextItems": {
+            "description": "Items:  A segment to provide explanation and/or supplementary information related to the specified application error.",
+            "edi_order": 3,
+            "edi_tag": "FTX",
+            "edi_type": "segment",
+            "isRequired": false,
+            "items": {
+              "properties": {
+                "freeTextFormatCode": {
+                  "description": "Code specifying the format of free text.",
+                  "edi_order": 6,
+                  "edi_ref": "4447",
+                  "edi_type": "element",
+                  "isRequired": false,
+                  "maxLength": 3,
+                  "metaInfo": {},
+                  "propertyName": "freeTextFormatCode",
+                  "title": "FREE TEXT FORMAT CODE",
+                  "type": "string"
+                },
+                "freeTextFunctionCode": {
+                  "description": "Code specifying the function of free text.",
+                  "edi_order": 2,
+                  "edi_ref": "4453",
+                  "edi_type": "element",
+                  "isRequired": false,
+                  "maxLength": 3,
+                  "metaInfo": {},
+                  "propertyName": "freeTextFunctionCode",
+                  "title": "FREE TEXT FUNCTION CODE",
+                  "type": "string"
+                },
+                "languageNameCode": {
+                  "description": "Code specifying the language name.",
+                  "edi_order": 5,
+                  "edi_ref": "3453",
+                  "edi_type": "element",
+                  "isRequired": false,
+                  "maxLength": 3,
+                  "metaInfo": {},
+                  "propertyName": "languageNameCode",
+                  "title": "LANGUAGE NAME CODE",
+                  "type": "string"
+                },
+                "textLiteral": {
+                  "description": "Free text; one to five lines. ",
+                  "edi_order": 4,
+                  "edi_ref": "C108",
+                  "edi_type": "component",
+                  "isRequired": false,
+                  "properties": {
+                    "freeText_1": {
+                      "description": "Free form text.",
+                      "edi_order": 1,
+                      "edi_ref": "4440",
+                      "edi_type": "element",
+                      "isRequired": true,
+                      "maxLength": 512,
+                      "metaInfo": {},
+                      "propertyName": "freeText_1",
+                      "title": "Free text",
+                      "type": "string"
+                    },
+                    "freeText_2": {
+                      "description": "Free form text.",
+                      "edi_order": 2,
+                      "edi_ref": "4440",
+                      "edi_type": "element",
+                      "isRequired": false,
+                      "maxLength": 512,
+                      "metaInfo": {},
+                      "propertyName": "freeText_2",
+                      "title": "Free text",
+                      "type": "string"
+                    },
+                    "freeText_3": {
+                      "description": "Free form text.",
+                      "edi_order": 3,
+                      "edi_ref": "4440",
+                      "edi_type": "element",
+                      "isRequired": false,
+                      "maxLength": 512,
+                      "metaInfo": {},
+                      "propertyName": "freeText_3",
+                      "title": "Free text",
+                      "type": "string"
+                    },
+                    "freeText_4": {
+                      "description": "Free form text.",
+                      "edi_order": 4,
+                      "edi_ref": "4440",
+                      "edi_type": "element",
+                      "isRequired": false,
+                      "maxLength": 512,
+                      "metaInfo": {},
+                      "propertyName": "freeText_4",
+                      "title": "Free text",
+                      "type": "string"
+                    },
+                    "freeText_5": {
+                      "description": "Free form text.",
+                      "edi_order": 5,
+                      "edi_ref": "4440",
+                      "edi_type": "element",
+                      "isRequired": false,
+                      "maxLength": 512,
+                      "metaInfo": {},
+                      "propertyName": "freeText_5",
+                      "title": "Free text",
+                      "type": "string"
+                    }
+                  },
+                  "propertyName": "textLiteral",
+                  "required": [
+                    "freeText_1"
+                  ],
+                  "title": "TEXT LITERAL",
+                  "type": "object"
+                },
+                "textReference": {
+                  "description": "Coded reference to a standard text and its source. ",
+                  "edi_order": 3,
+                  "edi_ref": "C107",
+                  "edi_type": "component",
+                  "isRequired": false,
+                  "properties": {
+                    "codeListIdentificationCode": {
+                      "description": "Code identifying a user or association maintained code list.",
+                      "edi_order": 2,
+                      "edi_ref": "1131",
+                      "edi_type": "element",
+                      "isRequired": false,
+                      "maxLength": 17,
+                      "metaInfo": {},
+                      "propertyName": "codeListIdentificationCode",
+                      "title": "Code list identification code",
+                      "type": "string"
+                    },
+                    "codeListResponsibleAgencyCode": {
+                      "description": "Code specifying the agency responsible for a code list.",
+                      "edi_order": 3,
+                      "edi_ref": "3055",
+                      "edi_type": "element",
+                      "isRequired": false,
+                      "maxLength": 3,
+                      "metaInfo": {},
+                      "propertyName": "codeListResponsibleAgencyCode",
+                      "title": "Code list responsible agency code",
+                      "type": "string"
+                    },
+                    "freeTextDescriptionCode": {
+                      "description": "Code specifying free form text.",
+                      "edi_order": 1,
+                      "edi_ref": "4441",
+                      "edi_type": "element",
+                      "isRequired": true,
+                      "maxLength": 17,
+                      "metaInfo": {},
+                      "propertyName": "freeTextDescriptionCode",
+                      "title": "Free text description code",
+                      "type": "string"
+                    }
+                  },
+                  "propertyName": "textReference",
+                  "required": [
+                    "freeTextDescriptionCode"
+                  ],
+                  "title": "TEXT REFERENCE",
+                  "type": "object"
+                },
+                "textSubjectCodeQualifier": {
+                  "description": "Code qualifying the subject of the text.",
+                  "edi_order": 1,
+                  "edi_ref": "4451",
+                  "edi_type": "element",
+                  "isRequired": true,
+                  "maxLength": 3,
+                  "metaInfo": {},
+                  "propertyName": "textSubjectCodeQualifier",
+                  "title": "TEXT SUBJECT CODE QUALIFIER",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "textSubjectCodeQualifier"
+              ],
+              "type": "object"
+            },
+            "maxItems": 99,
+            "minItems": 0,
+            "propertyName": "freeTextItems",
+            "title": "FREE TEXT items",
+            "type": "array"
+          },
+          "messageLevelActionAndErrorCodes": {
+            "description": "Message Level Action and Error Codes.",
+            "edi_order": 2,
+            "edi_tag": "UCX",
+            "edi_type": "segment",
+            "isRequired": false,
+            "properties": {
+              "actionCoded": {
+                "description": "Action coded.",
+                "edi_order": 1,
+                "edi_ref": "0083",
+                "edi_type": "element",
+                "isRequired": true,
+                "maxLength": 3,
+                "metaInfo": {},
+                "propertyName": "actionCoded",
+                "title": "Action coded",
+                "type": "string"
+              },
+              "syntaxErrorCoded": {
+                "description": "Syntax error coded.",
+                "edi_order": 2,
+                "edi_ref": "0085",
+                "edi_type": "element",
+                "isRequired": false,
+                "maxLength": 3,
+                "metaInfo": {},
+                "propertyName": "syntaxErrorCoded",
+                "title": "Syntax error coded",
+                "type": "string"
+              }
+            },
+            "propertyName": "messageLevelActionAndErrorCodes",
+            "required": [
+              "actionCoded"
+            ],
+            "title": "Message Level Action and Error Codes",
+            "type": "object"
+          },
+          "messagePackageResponse": {
+            "description": "Message/package response.",
+            "edi_order": 1,
+            "edi_tag": "UCM",
+            "edi_type": "segment",
+            "isRequired": false,
+            "properties": {
+              "actionCoded": {
+                "description": "Action coded.",
+                "edi_order": 3,
+                "edi_ref": "0083",
+                "edi_type": "element",
+                "isRequired": false,
+                "maxLength": 3,
+                "metaInfo": {},
+                "propertyName": "actionCoded",
+                "title": "Action coded",
+                "type": "string"
+              },
+              "dataElementIdentification": {
+                "description": "DATA ELEMENT IDENTIFICATION.",
+                "edi_order": 6,
+                "edi_ref": "S011",
+                "edi_type": "component",
+                "isRequired": false,
+                "properties": {
+                  "erroneousComponentDataElementPosition": {
+                    "description": "Erroneous component data element position.",
+                    "edi_order": 2,
+                    "edi_ref": "0104",
+                    "edi_type": "element",
+                    "isRequired": false,
+                    "max": 999,
+                    "metaInfo": {},
+                    "propertyName": "erroneousComponentDataElementPosition",
+                    "title": "Erroneous component data element position",
+                    "type": "number"
+                  },
+                  "erroneousDataElementOccurrence": {
+                    "description": "Erroneous data element occurrence.",
+                    "edi_order": 3,
+                    "edi_ref": "0136",
+                    "edi_type": "element",
+                    "isRequired": false,
+                    "max": 999999,
+                    "metaInfo": {},
+                    "propertyName": "erroneousDataElementOccurrence",
+                    "title": "Erroneous data element occurrence",
+                    "type": "number"
+                  },
+                  "erroneousDataElementPositionInSegment": {
+                    "description": "Erroneous data element position in segment.",
+                    "edi_order": 1,
+                    "edi_ref": "0098",
+                    "edi_type": "element",
+                    "isRequired": true,
+                    "max": 999,
+                    "metaInfo": {},
+                    "propertyName": "erroneousDataElementPositionInSegment",
+                    "title": "Erroneous data element position in segment",
+                    "type": "number"
+                  }
+                },
+                "propertyName": "dataElementIdentification",
+                "required": [
+                  "erroneousDataElementPositionInSegment"
+                ],
+                "title": "DATA ELEMENT IDENTIFICATION",
+                "type": "object"
+              },
+              "messageIdentifier": {
+                "description": "Identification of the type, version, etc. of the message being interchanged. ",
+                "edi_order": 2,
+                "edi_ref": "S009",
+                "edi_type": "component",
+                "isRequired": false,
+                "properties": {
+                  "associationAssignedCode": {
+                    "description": "Code, assigned by the association responsible for the design and maintenance of the message type concerned, which further identifies the message.",
+                    "edi_order": 5,
+                    "edi_ref": "0057",
+                    "edi_type": "element",
+                    "isRequired": false,
+                    "maxLength": 6,
+                    "metaInfo": {},
+                    "propertyName": "associationAssignedCode",
+                    "title": "Association assigned code",
+                    "type": "string"
+                  },
+                  "codeListDirectoryVersionNumber": {
+                    "description": "Version number of the code list directory.",
+                    "edi_order": 6,
+                    "edi_ref": "0110",
+                    "edi_type": "element",
+                    "isRequired": false,
+                    "maxLength": 6,
+                    "metaInfo": {},
+                    "propertyName": "codeListDirectoryVersionNumber",
+                    "title": "Code list directory version number",
+                    "type": "string"
+                  },
+                  "controllingAgencyCoded": {
+                    "description": "Code identifying a controlling agency.",
+                    "edi_order": 4,
+                    "edi_ref": "0051",
+                    "edi_type": "element",
+                    "isRequired": true,
+                    "maxLength": 3,
+                    "metaInfo": {},
+                    "propertyName": "controllingAgencyCoded",
+                    "title": "Controlling agency, coded",
+                    "type": "string"
+                  },
+                  "messageReleaseNumber": {
+                    "description": "Release number within the current message version number.",
+                    "edi_order": 3,
+                    "edi_ref": "0054",
+                    "edi_type": "element",
+                    "isRequired": true,
+                    "maxLength": 3,
+                    "metaInfo": {},
+                    "propertyName": "messageReleaseNumber",
+                    "title": "Message release number",
+                    "type": "string"
+                  },
+                  "messageType": {
+                    "description": "Code identifying a type of message and assigned by its controlling agency.",
+                    "edi_order": 1,
+                    "edi_ref": "0065",
+                    "edi_type": "element",
+                    "isRequired": true,
+                    "maxLength": 6,
+                    "metaInfo": {},
+                    "propertyName": "messageType",
+                    "title": "Message type",
+                    "type": "string"
+                  },
+                  "messageTypeSubFunctionIdentification": {
+                    "description": "Code identifying a sub-function of a message type.",
+                    "edi_order": 7,
+                    "edi_ref": "0113",
+                    "edi_type": "element",
+                    "isRequired": false,
+                    "maxLength": 6,
+                    "metaInfo": {},
+                    "propertyName": "messageTypeSubFunctionIdentification",
+                    "title": "Message type sub-function identification",
+                    "type": "string"
+                  },
+                  "messageVersionNumber": {
+                    "description": "Version number of a message type.",
+                    "edi_order": 2,
+                    "edi_ref": "0052",
+                    "edi_type": "element",
+                    "isRequired": true,
+                    "maxLength": 3,
+                    "metaInfo": {},
+                    "propertyName": "messageVersionNumber",
+                    "title": "Message version number",
+                    "type": "string"
+                  }
+                },
+                "propertyName": "messageIdentifier",
+                "required": [
+                  "messageType",
+                  "messageVersionNumber",
+                  "messageReleaseNumber",
+                  "controllingAgencyCoded"
+                ],
+                "title": "MESSAGE IDENTIFIER",
+                "type": "object"
+              },
+              "messageReferenceNumber": {
+                "description": "Unique message reference assigned by the sender.",
+                "edi_order": 1,
+                "edi_ref": "0062",
+                "edi_type": "element",
+                "isRequired": true,
+                "maxLength": 14,
+                "metaInfo": {},
+                "propertyName": "messageReferenceNumber",
+                "title": "MESSAGE REFERENCE NUMBER",
+                "type": "string"
+              },
+              "packageReferenceNumber": {
+                "description": "Package reference number.",
+                "edi_order": 7,
+                "edi_ref": "0800",
+                "edi_type": "element",
+                "isRequired": false,
+                "maxLength": 35,
+                "metaInfo": {},
+                "propertyName": "packageReferenceNumber",
+                "title": "Package reference number",
+                "type": "string"
+              },
+              "referenceIdentification": {
+                "description": "REFERENCE IDENTIFICATION.",
+                "edi_order": 8,
+                "edi_ref": "S020",
+                "edi_type": "component",
+                "isRequired": false,
+                "properties": {
+                  "referenceIdentificationNumber": {
+                    "description": "Reference identification number.",
+                    "edi_order": 2,
+                    "edi_ref": "0802",
+                    "edi_type": "element",
+                    "isRequired": true,
+                    "maxLength": 35,
+                    "metaInfo": {},
+                    "propertyName": "referenceIdentificationNumber",
+                    "title": "Reference identification number",
+                    "type": "string"
+                  },
+                  "referenceQualifier": {
+                    "description": "Reference qualifier.",
+                    "edi_order": 1,
+                    "edi_ref": "0813",
+                    "edi_type": "element",
+                    "isRequired": true,
+                    "maxLength": 3,
+                    "metaInfo": {},
+                    "propertyName": "referenceQualifier",
+                    "title": "Reference qualifier",
+                    "type": "string"
+                  }
+                },
+                "propertyName": "referenceIdentification",
+                "required": [
+                  "referenceQualifier",
+                  "referenceIdentificationNumber"
+                ],
+                "title": "REFERENCE IDENTIFICATION",
+                "type": "object"
+              },
+              "securityReferenceNumber": {
+                "description": "Security reference number.",
+                "edi_order": 9,
+                "edi_ref": "0534",
+                "edi_type": "element",
+                "isRequired": false,
+                "maxLength": 14,
+                "metaInfo": {},
+                "propertyName": "securityReferenceNumber",
+                "title": "Security reference number",
+                "type": "string"
+              },
+              "securitySegmentPosition": {
+                "description": "Security segment position.",
+                "edi_order": 10,
+                "edi_ref": "0138",
+                "edi_type": "element",
+                "isRequired": false,
+                "maxLength": 6,
+                "metaInfo": {},
+                "propertyName": "securitySegmentPosition",
+                "title": "Security segment position",
+                "type": "string"
+              },
+              "serviceSegmentTagCoded": {
+                "description": "Service segment tag, coded.",
+                "edi_order": 5,
+                "edi_ref": "0135",
+                "edi_type": "element",
+                "isRequired": false,
+                "maxLength": 3,
+                "metaInfo": {},
+                "propertyName": "serviceSegmentTagCoded",
+                "title": "Service segment tag coded",
+                "type": "string"
+              },
+              "syntaxErrorCoded": {
+                "description": "Syntax error coded.",
+                "edi_order": 4,
+                "edi_ref": "0085",
+                "edi_type": "element",
+                "isRequired": false,
+                "maxLength": 3,
+                "metaInfo": {},
+                "propertyName": "syntaxErrorCoded",
+                "title": "Syntax error coded",
+                "type": "string"
+              }
+            },
+            "propertyName": "messagePackageResponse",
+            "required": [
+              "messageReferenceNumber"
+            ],
+            "title": "Message/package response",
+            "type": "object"
+          },
+          "responseDetailItems": {
+            "description": "GRP2 - Segment Group 2.",
+            "edi_order": 4,
+            "edi_tag": "GRP2",
+            "edi_type": "group",
+            "isRequired": false,
+            "items": {
+              "properties": {
+                "dataElementErrorIndicationsItems": {
+                  "description": "Items: Data element error indications.",
+                  "edi_order": 2,
+                  "edi_tag": "UCD",
+                  "edi_type": "segment",
+                  "isRequired": false,
+                  "items": {
+                    "properties": {
+                      "dataElementIdentification": {
+                        "description": "DATA ELEMENT IDENTIFICATION.",
+                        "edi_order": 2,
+                        "edi_ref": "S011",
+                        "edi_type": "component",
+                        "isRequired": false,
+                        "properties": {
+                          "erroneousComponentDataElementPosition": {
+                            "description": "Erroneous component data element position.",
+                            "edi_order": 2,
+                            "edi_ref": "0104",
+                            "edi_type": "element",
+                            "isRequired": false,
+                            "max": 999,
+                            "metaInfo": {},
+                            "propertyName": "erroneousComponentDataElementPosition",
+                            "title": "Erroneous component data element position",
+                            "type": "number"
+                          },
+                          "erroneousDataElementOccurrence": {
+                            "description": "Erroneous data element occurrence.",
+                            "edi_order": 3,
+                            "edi_ref": "0136",
+                            "edi_type": "element",
+                            "isRequired": false,
+                            "max": 999999,
+                            "metaInfo": {},
+                            "propertyName": "erroneousDataElementOccurrence",
+                            "title": "Erroneous data element occurrence",
+                            "type": "number"
+                          },
+                          "erroneousDataElementPositionInSegment": {
+                            "description": "Erroneous data element position in segment.",
+                            "edi_order": 1,
+                            "edi_ref": "0098",
+                            "edi_type": "element",
+                            "isRequired": true,
+                            "max": 999,
+                            "metaInfo": {},
+                            "propertyName": "erroneousDataElementPositionInSegment",
+                            "title": "Erroneous data element position in segment",
+                            "type": "number"
+                          }
+                        },
+                        "propertyName": "dataElementIdentification",
+                        "required": [
+                          "erroneousDataElementPositionInSegment"
+                        ],
+                        "title": "DATA ELEMENT IDENTIFICATION",
+                        "type": "object"
+                      },
+                      "syntaxErrorCoded": {
+                        "description": "Syntax error, coded.",
+                        "edi_order": 1,
+                        "edi_ref": "0085",
+                        "edi_type": "element",
+                        "isRequired": true,
+                        "maxLength": 3,
+                        "metaInfo": {},
+                        "propertyName": "syntaxErrorCoded",
+                        "title": "Syntax error coded",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "syntaxErrorCoded"
+                    ],
+                    "type": "object"
+                  },
+                  "maxItems": 99,
+                  "minItems": 0,
+                  "propertyName": "dataElementErrorIndicationsItems",
+                  "title": "Data element error indications items",
+                  "type": "array"
+                },
+                "segmentErrorIndication": {
+                  "description": "Segment error indication.",
+                  "edi_order": 1,
+                  "edi_tag": "UCS",
+                  "edi_type": "segment",
+                  "isRequired": false,
+                  "properties": {
+                    "segmentPositionInMessageBody": {
+                      "description": "Segment position in message body.",
+                      "edi_order": 1,
+                      "edi_ref": "0096",
+                      "edi_type": "element",
+                      "isRequired": true,
+                      "max": 999999,
+                      "metaInfo": {},
+                      "propertyName": "segmentPositionInMessageBody",
+                      "title": "Segment position in message body",
+                      "type": "number"
+                    },
+                    "syntaxErrorCoded": {
+                      "description": "Syntax error, coded.",
+                      "edi_order": 2,
+                      "edi_ref": "0085",
+                      "edi_type": "element",
+                      "isRequired": false,
+                      "maxLength": 3,
+                      "metaInfo": {},
+                      "propertyName": "syntaxErrorCoded",
+                      "title": "Syntax error coded",
+                      "type": "string"
+                    }
+                  },
+                  "propertyName": "segmentErrorIndication",
+                  "required": [
+                    "segmentPositionInMessageBody"
+                  ],
+                  "title": "Segment error indication",
+                  "type": "object"
+                }
+              },
+              "required": [],
+              "type": "object"
+            },
+            "maxItems": 999,
+            "minItems": 0,
+            "propertyName": "responseDetailItems",
+            "title": "GRP2",
+            "type": "array"
+          }
+        },
+        "required": [],
+        "type": "object"
+      },
+      "maxItems": 999999,
+      "minItems": 0,
+      "propertyName": "messageResponses",
+      "title": "GRP1",
+      "type": "array"
+    },
+    "messageTrailer": {
+      "description": " A service segment ending a message, giving the total number of segments in the message (including the UNH \u0026 UNT) and the control reference number of the message.",
+      "edi_order": 6,
+      "edi_tag": "UNT",
+      "edi_type": "segment",
+      "isRequired": false,
+      "properties": {
+        "messageReferenceNumber": {
+          "description": "Unique message reference assigned by the sender.",
+          "edi_order": 2,
+          "edi_ref": "0062",
+          "edi_type": "element",
+          "isRequired": true,
+          "maxLength": 14,
+          "metaInfo": {},
+          "propertyName": "messageReferenceNumber",
+          "title": "MESSAGE REFERENCE NUMBER",
+          "type": "string"
+        },
+        "numberOfSegmentsInAMessage": {
+          "description": "The number of segments in a message body, plus the message header segment and message trailer segment.",
+          "edi_order": 1,
+          "edi_ref": "0074",
+          "edi_type": "element",
+          "isRequired": true,
+          "max": 9999999999,
+          "metaInfo": {},
+          "propertyName": "numberOfSegmentsInAMessage",
+          "title": "NUMBER OF SEGMENTS IN A MESSAGE",
+          "type": "number"
+        }
+      },
+      "propertyName": "messageTrailer",
+      "required": [
+        "numberOfSegmentsInAMessage",
+        "messageReferenceNumber"
+      ],
+      "title": "MESSAGE TRAILER",
+      "type": "object"
+    }
+  },
+  "required": [],
+  "type": "object"
+}

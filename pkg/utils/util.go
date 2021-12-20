@@ -38,9 +38,9 @@ func ReadFilesFromDir(dir string) ([]fs.DirEntry, error) {
 
 // Formating the package name and the Directory Name
 
-func PackageFormat(outputDir string, file os.DirEntry) (string, string) {
-	packageDirectory := fmt.Sprintf("%s/%s", outputDir, Sanitizestring(file.Name()))
-	packageName := Sanitizestring(file.Name())
+func PackageFormat(outputDir string, file string) (string, string) {
+	packageDirectory := fmt.Sprintf("%s/%s", outputDir, Sanitizestring(file))
+	packageName := Sanitizestring(file)
 
 	return packageDirectory, packageName
 }
@@ -50,6 +50,13 @@ func ParseFlags() (string, string) {
 	outputDir := flag.String("output", "./schemas", "Please Enter The Input Directory")
 	flag.Parse()
 	return *inputDir, *outputDir
+}
+
+// Common Error handler
+func CheckError(e error) {
+	if e != nil {
+		fmt.Println(e)
+	}
 }
 
 // Removes extra special characters from string and the
